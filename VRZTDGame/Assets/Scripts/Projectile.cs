@@ -3,24 +3,41 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed = 10f;
-
     private Transform target;
+
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
+
+    public void SetSpeed(float newSpeed)
+    {
+        this.speed = newSpeed;
+    }
 
     void Update()
     {
-        if (target != null)
+        if (target == null)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
-            transform.position += direction * speed * Time.deltaTime;
+            Destroy(gameObject);
+            return;
         }
-        else
+
+        Vector3 direction = target.position - transform.position;
+        float distanceThisFrame = speed * Time.deltaTime;
+        if (direction.magnitude <= distanceThisFrame)
         {
-            // Destroy the projectile or do other logic when the target is null
+            HitTarget();
+            return;
         }
+
+        transform.Translate(direction.normalized * distanceThisFrame, Space.World);
     }
 
-    public void SetTarget(Transform targetTransform)
+    void HitTarget()
     {
-        target = targetTransform;
+        // Implement target hit logic here
+
+        Destroy(gameObject);
     }
 }

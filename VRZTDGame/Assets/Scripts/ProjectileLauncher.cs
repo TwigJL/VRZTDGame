@@ -9,18 +9,19 @@ public class ProjectileLauncher : MonoBehaviour
     public Transform firePoint;
     public bool autoFire = true;
 
-    private TowerBehavior towerBehavior;
+    public TowerBehavior towerBehavior; // Changed to public
     private float fireTimer;
+    public float projectileSpeed;
 
     void Start()
     {
-        towerBehavior = GetComponent<TowerBehavior>();
+        // Removed the GetComponent<TowerBehavior>() line
         fireTimer = 0f;
     }
 
     void Update()
     {
-        if (towerBehavior.target != null && autoFire)
+        if (towerBehavior != null && towerBehavior.target != null && autoFire)
         {
             fireTimer += Time.deltaTime;
             if (fireTimer >= 1f / fireRate)
@@ -40,7 +41,9 @@ public class ProjectileLauncher : MonoBehaviour
             if (projectileScript != null)
             {
                 projectileScript.SetTarget(target);
+                projectileScript.SetSpeed(projectileSpeed); // Set the projectile speed
             }
         }
     }
+
 }
