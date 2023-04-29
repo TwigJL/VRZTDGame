@@ -33910,7 +33910,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907026455076624}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
@@ -33944,3 +33944,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  damage: 25
+  zombieLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  effect: 0

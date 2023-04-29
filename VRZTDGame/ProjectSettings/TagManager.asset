@@ -11,14 +11,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Zombie
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Burn
+  - Slow
+  - Freeze
+  - AOE
+  - Chain
   - 
   - 
   - 

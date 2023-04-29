@@ -19497,7 +19497,6 @@ GameObject:
   - component: {fileID: 65391195922267170}
   - component: {fileID: 54413767696742250}
   - component: {fileID: 7556993062905316096}
-  - component: {fileID: -2701069428091155561}
   m_Layer: 0
   m_Name: vfx_Projectile_Firefrost01_Purple
   m_TagString: Bullet
@@ -19602,19 +19601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
---- !u!114 &-2701069428091155561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310484524390396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d346a71ee35123f499fd8f6e5ee3e2d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!1 &1358656833575270
 GameObject:
   m_ObjectHideFlags: 0
