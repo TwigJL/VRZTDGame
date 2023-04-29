@@ -19625,7 +19625,7 @@ GameObject:
   - component: {fileID: -5677465242862264129}
   m_Layer: 0
   m_Name: vfx_Projectile_Trail02_Purple
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

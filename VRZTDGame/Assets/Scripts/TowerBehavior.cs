@@ -6,7 +6,7 @@ public class TowerBehavior : MonoBehaviour
 {
     public float rotationSpeed = 5f;
     public string targetTag = "Zombie";
-
+    public bool trackTarget = true;
     public Transform target;
     private SphereCollider towerRange;
     private List<Transform> targetsInCollider = new List<Transform>();
@@ -20,23 +20,42 @@ public class TowerBehavior : MonoBehaviour
 
     void Update()
     {
+        // Always try to find a new target
         if (target == null)
         {
             FindNewTarget();
-            if (targetsInCollider.Count == 0)
-            {
-                animator.SetTrigger("Stop");
-            }
+        }
+
+        // Rotate the tower based on the trackTarget value
+        if (!trackTarget)
+        {
+            // Rotate around Y-axis at a fixed speed when not tracking a target
+            transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f);
         }
         else
         {
-            Vector3 direction = target.position - transform.position;
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            Vector3 rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed).eulerAngles;
-            transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-            animator.SetTrigger("Shoot");
+            if (target != null)
+            {
+                Vector3 direction = target.position - transform.position;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                Vector3 rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed).eulerAngles;
+                transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+                if (animator != null)
+                {
+                    animator.SetTrigger("Shoot");
+                }
+            }
+            else
+            {
+                if (animator != null)
+                {
+                    animator.SetTrigger("Stop");
+                }
+            }
         }
     }
+
 
     void OnTriggerEnter(Collider other)
     {

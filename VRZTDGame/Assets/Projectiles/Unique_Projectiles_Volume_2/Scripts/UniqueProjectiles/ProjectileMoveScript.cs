@@ -45,7 +45,7 @@ public class ProjectileMoveScript : MonoBehaviour {
         rb = GetComponent <Rigidbody> ();
         foreach (Collider collider in Physics.OverlapSphere(transform.position, 100f))
         {
-            if (collider.gameObject.CompareTag("Tower"))
+            if (collider.gameObject.CompareTag("Tower") || collider.gameObject.CompareTag("Player"))
             {
                 Physics.IgnoreCollision(collider, GetComponent<Collider>());
             }

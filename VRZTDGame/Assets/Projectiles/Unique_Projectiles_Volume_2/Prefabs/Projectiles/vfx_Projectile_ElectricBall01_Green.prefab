@@ -9666,7 +9666,7 @@ GameObject:
   - component: {fileID: 7769528643485130876}
   m_Layer: 0
   m_Name: vfx_Projectile_ElectricBall01_Green
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
