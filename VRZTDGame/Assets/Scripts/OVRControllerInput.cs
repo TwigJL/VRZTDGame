@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using OculusSampleFramework;
+using Oculus.Interaction.Input;
 
 public class OVRControllerInput : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public OVRInput.Controller controller;
+    public Hand hand;
+    public TowerPlacementManager towerPlacementManager;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Check for primary index trigger press
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, controller))
+        {
+            if (towerPlacementManager.placementMode)
+            {
+                towerPlacementManager.ConfirmTowerPlacement();
+            }
+        }
     }
 }

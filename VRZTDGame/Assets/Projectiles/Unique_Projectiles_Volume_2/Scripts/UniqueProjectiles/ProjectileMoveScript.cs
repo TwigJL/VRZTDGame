@@ -43,7 +43,13 @@ public class ProjectileMoveScript : MonoBehaviour {
 	void Start () {
         startPos = transform.position;
         rb = GetComponent <Rigidbody> ();
-
+        foreach (Collider collider in Physics.OverlapSphere(transform.position, 100f))
+        {
+            if (collider.gameObject.CompareTag("Tower"))
+            {
+                Physics.IgnoreCollision(collider, GetComponent<Collider>());
+            }
+        }
 		//used to create a radius for the accuracy and have a very unique randomness
 		if (accuracy != 100) {
 			accuracy = 1 - (accuracy / 100);
