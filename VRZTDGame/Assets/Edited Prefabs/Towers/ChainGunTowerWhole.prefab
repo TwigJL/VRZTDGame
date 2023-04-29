@@ -50,7 +50,7 @@ MonoBehaviour:
   firePoint: {fileID: 5360078302243808484}
   autoFire: 1
   towerBehavior: {fileID: 5360078302634665622}
-  projectileSpeed: 25
+  projectileSpeed: 80
 --- !u!1 &5360078302270150605
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   firePoint: {fileID: 5360078302270150604}
   autoFire: 1
   towerBehavior: {fileID: 5360078302634665622}
-  projectileSpeed: 25
+  projectileSpeed: 80
 --- !u!1 &5360078302280065293
 GameObject:
   m_ObjectHideFlags: 0

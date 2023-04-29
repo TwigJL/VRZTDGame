@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1999246531747006, guid: 12ac2cee0b0cf924188628849b32b122,
     type: 3}
-  fireRate: 2
+  fireRate: 1.2
   firePoint: {fileID: 768999912293346806}
   autoFire: 1
   towerBehavior: {fileID: 768999913284218800}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1999246531747006, guid: 12ac2cee0b0cf924188628849b32b122,
     type: 3}
-  fireRate: 2
+  fireRate: 1.2
   firePoint: {fileID: 768999912704076978}
   autoFire: 1
   towerBehavior: {fileID: 768999913284218800}

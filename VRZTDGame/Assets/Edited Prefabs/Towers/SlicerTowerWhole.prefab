@@ -92,11 +92,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1918213299677092, guid: 873de05f94fe82143a953b728cc25c58,
     type: 3}
-  fireRate: 0.8
+  fireRate: 1.2
   firePoint: {fileID: 2455887894549673723}
   autoFire: 1
   towerBehavior: {fileID: 2455887893768655281}
-  projectileSpeed: 45
+  projectileSpeed: 60
 --- !u!1 &2455887894864207681
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,11 +143,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1918213299677092, guid: 873de05f94fe82143a953b728cc25c58,
     type: 3}
-  fireRate: 0.8
+  fireRate: 1.2
   firePoint: {fileID: 2455887894864207682}
   autoFire: 1
   towerBehavior: {fileID: 2455887893768655281}
-  projectileSpeed: 45
+  projectileSpeed: 60
 --- !u!1 &2455887895261064962
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,11 +194,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1918213299677092, guid: 873de05f94fe82143a953b728cc25c58,
     type: 3}
-  fireRate: 0.8
+  fireRate: 1.2
   firePoint: {fileID: 2455887895261064963}
   autoFire: 1
   towerBehavior: {fileID: 2455887893768655281}
-  projectileSpeed: 45
+  projectileSpeed: 60
 --- !u!1 &2455887895456611339
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,11 +245,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1918213299677092, guid: 873de05f94fe82143a953b728cc25c58,
     type: 3}
-  fireRate: 0.8
+  fireRate: 1.2
   firePoint: {fileID: 2455887895456611340}
   autoFire: 1
   towerBehavior: {fileID: 2455887893768655281}
-  projectileSpeed: 45
+  projectileSpeed: 60
 --- !u!1001 &2455887893691458748
 PrefabInstance:
   m_ObjectHideFlags: 0

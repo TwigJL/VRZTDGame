@@ -90,13 +90,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1a9a5373e4652439963e7ba41b0489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1157586579680520, guid: 92c0c48c3c544bc45955bd1c064bf29a,
+  projectilePrefab: {fileID: 1962781636682716, guid: c858095ade7f2714994a04286a97719d,
     type: 3}
-  fireRate: 1.5
+  fireRate: 1
   firePoint: {fileID: 1168071077668933519}
   autoFire: 1
   towerBehavior: {fileID: 1168071076444028981}
-  projectileSpeed: 80
+  projectileSpeed: 120
 --- !u!1001 &1168071077565971264
 PrefabInstance:
   m_ObjectHideFlags: 0

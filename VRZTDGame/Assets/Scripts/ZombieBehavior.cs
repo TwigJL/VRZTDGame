@@ -16,11 +16,19 @@ public class ZombieBehavior : MonoBehaviour
     public int burnDamagePerSecond = 10;
     public int maxHealth = 100;
     private int health;
+    private bool isSlowed = false;
     private float normalSpeed;
     private Coroutine slowCoroutine;
     private Coroutine freezeCoroutine;
     private Coroutine burnCoroutine;
     public LayerMask zombieLayer;
+    public ParticleSystem slowEffectParticles;
+    public ParticleSystem freezeEffectParticles;
+    public ParticleSystem burnEffectParticles;
+    public ParticleSystem chainEffectParticles;
+    public ParticleSystem aoeEffectParticles;
+    public ParticleSystem bleedParticles;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -28,6 +36,21 @@ public class ZombieBehavior : MonoBehaviour
         health = maxHealth;
         animator.SetFloat("Speed", speed);
         zombieLayer = LayerMask.GetMask("Zombie");
+        DisableAllEffectParticles();
+    }
+    private void DisableAllEffectParticles()
+    {
+        slowEffectParticles.Stop();
+        freezeEffectParticles.Stop();
+        burnEffectParticles.Stop();
+        aoeEffectParticles.Stop();
+        chainEffectParticles.Stop();
+
+        slowEffectParticles.gameObject.SetActive(false);
+        freezeEffectParticles.gameObject.SetActive(false);
+        burnEffectParticles.gameObject.SetActive(false);
+        aoeEffectParticles.gameObject.SetActive(false);
+        chainEffectParticles.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -76,33 +99,64 @@ public class ZombieBehavior : MonoBehaviour
     }
     public void ApplySlow()
     {
-        if (slowCoroutine != null) StopCoroutine(slowCoroutine);
-        slowCoroutine = StartCoroutine(SlowEffect());
+        if (!isSlowed)
+        {
+            if (slowCoroutine != null) StopCoroutine(slowCoroutine);
+            if (slowCoroutine == null)
+            {
+                slowEffectParticles.gameObject.SetActive(true);
+                slowEffectParticles.Play();
+                slowCoroutine = StartCoroutine(SlowEffect());
+            }
+            isSlowed = true;
+        }
     }
 
     private IEnumerator SlowEffect()
     {
         animator.SetFloat("Speed", normalSpeed / 2f);
         yield return new WaitForSeconds(slowDuration);
+        slowEffectParticles.Stop();
+        slowEffectParticles.gameObject.SetActive(false);
         animator.SetFloat("Speed", normalSpeed);
     }
 
     public void ApplyFreeze()
     {
         if (freezeCoroutine != null) StopCoroutine(freezeCoroutine);
-        freezeCoroutine = StartCoroutine(FreezeEffect());
+        freezeCoroutine = null;
+        if (freezeCoroutine == null)
+        {
+            freezeEffectParticles.gameObject.SetActive(true);
+            freezeEffectParticles.Play();
+            freezeCoroutine = StartCoroutine(FreezeEffect());
+        }
     }
 
     private IEnumerator FreezeEffect()
     {
         animator.SetFloat("Speed", 0f);
         yield return new WaitForSeconds(freezeDuration);
+        freezeEffectParticles.Stop();
+        freezeEffectParticles.gameObject.SetActive(false);
         animator.SetFloat("Speed", normalSpeed);
+        freezeCoroutine = null; // reset freezeCoroutine to null
     }
+
 
     public void ApplyBurn()
     {
-        if (burnCoroutine != null) StopCoroutine(burnCoroutine);
+        // If burnCoroutine is not null, stop the running coroutine
+        if (burnCoroutine != null)
+        {
+            StopCoroutine(burnCoroutine);
+        }
+
+        // Activate and play the burn effect particle system
+        burnEffectParticles.gameObject.SetActive(true);
+        burnEffectParticles.Play();
+
+        // Start the BurnEffect coroutine
         burnCoroutine = StartCoroutine(BurnEffect());
     }
 
@@ -116,25 +170,70 @@ public class ZombieBehavior : MonoBehaviour
             ApplyDamage(burnDamagePerSecond);
             burnTime += 1f;
         }
+        burnEffectParticles.Stop();
+        burnEffectParticles.gameObject.SetActive(false);
     }
+
+
     public void ApplyChainEffect(int damage, float chainRadius, float chainDelay)
     {
+        chainEffectParticles.gameObject.SetActive(true);
+        chainEffectParticles.Play(); // Play chain effect particles on the current zombie
+
         Collider[] nearbyZombies = Physics.OverlapSphere(transform.position, chainRadius, zombieLayer);
         foreach (Collider zombie in nearbyZombies)
         {
             ZombieBehavior zombieBehavior = zombie.GetComponent<ZombieBehavior>();
             if (zombieBehavior != null && zombieBehavior != this)
             {
+                zombieBehavior.PlayChainEffectParticles();
                 StartCoroutine(ChainEffectCoroutine(zombieBehavior, damage, chainDelay));
             }
         }
     }
 
+
     private IEnumerator ChainEffectCoroutine(ZombieBehavior target, int damage, float delay)
     {
         yield return new WaitForSeconds(delay);
-        target.ApplyDamage(damage);
+        if (target != null)
+        {
+            target.ApplyDamage(damage);
+            target.PlayChainEffectParticles(); // Play chain effect particles on the target zombie
+            target.StopChainEffectParticles();
+        }
     }
+
+    public void PlayChainEffectParticles()
+    {
+        if (chainEffectParticles != null)
+        {
+            chainEffectParticles.gameObject.SetActive(true);
+            chainEffectParticles.Play();
+        }
+    }
+
+    public void StopChainEffectParticles()
+    {
+        chainEffectParticles.Stop();
+        StartCoroutine(DeactivateChainEffectParticles());
+    }
+
+    private IEnumerator DeactivateChainEffectParticles()
+    {
+        yield return new WaitForSeconds(chainEffectParticles.main.duration);
+        chainEffectParticles.gameObject.SetActive(false);
+    }
+
+    public void PlayEffectParticles(Projectile.ProjectileEffect effect)
+    {
+        if (effect == Projectile.ProjectileEffect.AOE)
+        {
+            aoeEffectParticles.gameObject.SetActive(true);
+            aoeEffectParticles.Play();
+        }
+    }
+
 
 
 
@@ -145,12 +244,19 @@ public class ZombieBehavior : MonoBehaviour
         {
             DestroyZombie();
         }
+        else
+        {
+           bleedParticles.Play();
+        }
     }
     private void DestroyZombie()
     {
         // Play death animation
-        animator.SetTrigger("Death");
-
+        if (animator == null) return;
+        if (animator != null)
+        {
+            animator.SetTrigger("Death");
+        }
         // Delay the destruction of the game object
         float delay = animator.GetCurrentAnimatorStateInfo(0).length;
         Invoke("DestroyGameObject", delay);

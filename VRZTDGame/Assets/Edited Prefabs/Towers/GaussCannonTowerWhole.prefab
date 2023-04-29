@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1860375860738744, guid: 276ab3ffb8ec1034e95169be39eb630a,
     type: 3}
-  fireRate: 1
+  fireRate: 0.7
   firePoint: {fileID: 873771892086230704}
   autoFire: 1
   towerBehavior: {fileID: 873771893589574729}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1860375860738744, guid: 276ab3ffb8ec1034e95169be39eb630a,
     type: 3}
-  fireRate: 1
+  fireRate: 0.7
   firePoint: {fileID: 873771892144650312}
   autoFire: 1
   towerBehavior: {fileID: 873771893589574729}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1860375860738744, guid: 276ab3ffb8ec1034e95169be39eb630a,
     type: 3}
-  fireRate: 1
+  fireRate: 0.7
   firePoint: {fileID: 873771892427178210}
   autoFire: 1
   towerBehavior: {fileID: 873771893589574729}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1860375860738744, guid: 276ab3ffb8ec1034e95169be39eb630a,
     type: 3}
-  fireRate: 1
+  fireRate: 0.7
   firePoint: {fileID: 873771893047206865}
   autoFire: 1
   towerBehavior: {fileID: 873771893589574729}

@@ -57,7 +57,7 @@ public class Projectile : MonoBehaviour
     {
         Collider[] zombies;
         // Check for AOE effect and increase the radius of the OverlapSphere accordingly
-        if (effect == ProjectileEffect.AOE)
+        if (effect == ProjectileEffect.AOE || effect == ProjectileEffect.Burn)
         {
             zombies = Physics.OverlapSphere(transform.position, aoeRadius, zombieLayer);
         }
@@ -87,6 +87,7 @@ public class Projectile : MonoBehaviour
                     zombieBehavior.ApplyChainEffect(damage, chainRadius, chainDelay);
                     break;
                 }
+                zombieBehavior.PlayEffectParticles(effect);
             }
         }
 
