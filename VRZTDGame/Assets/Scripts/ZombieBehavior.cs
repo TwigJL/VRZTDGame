@@ -8,8 +8,6 @@ public class ZombieBehavior : MonoBehaviour
     public Waypoint[] waypoints;
     private Animator animator;
     private int currentWaypoint = 0;
-    private float chooseCooldown = 0.0f;
-    public float chooseDelay = 1.0f;
     public float slowDuration = 2f;
     public float freezeDuration = 3f;
     public float burnDuration = 5f;
@@ -28,6 +26,8 @@ public class ZombieBehavior : MonoBehaviour
     public ParticleSystem chainEffectParticles;
     public ParticleSystem aoeEffectParticles;
     public ParticleSystem bleedParticles;
+    private Vector3 nextTargetPosition;
+
 
     private void Start()
     {
@@ -45,12 +45,14 @@ public class ZombieBehavior : MonoBehaviour
         burnEffectParticles.Stop();
         aoeEffectParticles.Stop();
         chainEffectParticles.Stop();
+        bleedParticles.Stop();
 
         slowEffectParticles.gameObject.SetActive(false);
         freezeEffectParticles.gameObject.SetActive(false);
         burnEffectParticles.gameObject.SetActive(false);
         aoeEffectParticles.gameObject.SetActive(false);
         chainEffectParticles.gameObject.SetActive(false);
+        bleedParticles.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -62,25 +64,19 @@ public class ZombieBehavior : MonoBehaviour
         if (currentWaypoint < waypoints.Length)
         {
             Vector3 direction = new Vector3(waypoints[currentWaypoint].transform.position.x - transform.position.x, 0, waypoints[currentWaypoint].transform.position.z - transform.position.z);
-
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
-
             transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
-
-        if (chooseCooldown > 0.0f)
-        {
-            chooseCooldown -= Time.deltaTime;
-        }
     }
+
+
 
     void OnTriggerEnter(Collider other)
     {
         if (currentWaypoint < waypoints.Length && waypoints[currentWaypoint] != null &&
-        other.gameObject == waypoints[currentWaypoint].gameObject && chooseCooldown <= 0.0f)
+        other.gameObject == waypoints[currentWaypoint].gameObject)
         {
             ChooseNextWaypoint();
-            chooseCooldown = chooseDelay;
+            
         }
     }
 
@@ -96,7 +92,13 @@ public class ZombieBehavior : MonoBehaviour
         {
             currentWaypoint++;
         }
+
+        if (currentWaypoint < waypoints.Length && waypoints[currentWaypoint] != null)
+        {
+            nextTargetPosition = waypoints[currentWaypoint].transform.position;
+        }
     }
+
     public void ApplySlow()
     {
         if (!isSlowed)
