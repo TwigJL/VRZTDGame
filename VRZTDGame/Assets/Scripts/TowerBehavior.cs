@@ -21,7 +21,7 @@ public class TowerBehavior : MonoBehaviour
     void Update()
     {
         // Always try to find a new target
-        if (target == null)
+        if (target == null || target.GetComponent<ZombieBehavior>().isDead)
         {
             FindNewTarget();
         }
@@ -34,7 +34,7 @@ public class TowerBehavior : MonoBehaviour
         }
         else
         {
-            if (target != null)
+            if (target != null )
             {
                 Vector3 direction = target.position - transform.position;
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
@@ -96,9 +96,8 @@ public class TowerBehavior : MonoBehaviour
                     closestDistance = distance;
                     closestTarget = zombie;
                 }
-            }
+            } 
         }
-
         target = closestTarget;
     }
 }

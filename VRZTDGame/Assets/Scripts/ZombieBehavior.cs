@@ -13,7 +13,7 @@ public class ZombieBehavior : MonoBehaviour
     public float burnDuration = 5f;
     public int burnDamagePerSecond = 10;
     public int maxHealth = 100;
-    private int health;
+    public int health;
     private bool isSlowed = false;
     private float normalSpeed;
     private Coroutine slowCoroutine;
@@ -27,7 +27,7 @@ public class ZombieBehavior : MonoBehaviour
     public ParticleSystem aoeEffectParticles;
     public ParticleSystem bleedParticles;
     private Vector3 nextTargetPosition;
-
+    public bool isDead = false;
 
     private void Start()
     {
@@ -40,6 +40,7 @@ public class ZombieBehavior : MonoBehaviour
     }
     private void DisableAllEffectParticles()
     {
+        
         slowEffectParticles.Stop();
         freezeEffectParticles.Stop();
         burnEffectParticles.Stop();
@@ -66,6 +67,7 @@ public class ZombieBehavior : MonoBehaviour
             Vector3 direction = new Vector3(waypoints[currentWaypoint].transform.position.x - transform.position.x, 0, waypoints[currentWaypoint].transform.position.z - transform.position.z);
             transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
+        
     }
 
 
@@ -91,6 +93,11 @@ public class ZombieBehavior : MonoBehaviour
         else
         {
             currentWaypoint++;
+        }
+        if (currentWaypoint >= waypoints.Length)
+        {
+            DestroyGameObject(); // destroy the game object if the last waypoint is reached
+            return;
         }
 
         if (currentWaypoint < waypoints.Length && waypoints[currentWaypoint] != null)
@@ -258,16 +265,21 @@ public class ZombieBehavior : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("Death");
+            
         }
         // Delay the destruction of the game object
         float delay = animator.GetCurrentAnimatorStateInfo(0).length;
         Invoke("DestroyGameObject", delay);
+        isDead = true;
     }
 
     private void DestroyGameObject()
     {
+        GameManager.activeZombies.Remove(this);
+        GameManager.instance.ActiveZombiesCount = GameManager.activeZombies.Count; // Update the property
         Destroy(gameObject);
     }
+    
 
 
 }

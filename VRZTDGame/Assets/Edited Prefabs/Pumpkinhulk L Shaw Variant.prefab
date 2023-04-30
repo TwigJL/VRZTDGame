@@ -44120,7 +44120,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 55ef16f848d2ef743b9011a906fb4550,
         type: 3}
       propertyPath: m_TagString
-      value: Zombie
+      value: BossZombie
       objectReference: {fileID: 0}
     - target: {fileID: 1082271958561512970, guid: 55ef16f848d2ef743b9011a906fb4550,
         type: 3}
@@ -44340,7 +44340,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   waypoints: []
-  chooseDelay: 1
   slowDuration: 2
   freezeDuration: 1
   burnDuration: 5
@@ -44355,7 +44354,6 @@ MonoBehaviour:
   chainEffectParticles: {fileID: 1567312629}
   aoeEffectParticles: {fileID: 198000011522773011}
   bleedParticles: {fileID: 198000011587859256}
-  deviationRadius: 100
 --- !u!4 &6400641743714820222 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 55ef16f848d2ef743b9011a906fb4550,

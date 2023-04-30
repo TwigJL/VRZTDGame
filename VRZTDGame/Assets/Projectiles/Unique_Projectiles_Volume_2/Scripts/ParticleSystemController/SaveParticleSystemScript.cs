@@ -7,6 +7,7 @@ namespace GAP_ParticleSystemController
 {
     public static class SaveParticleSystemScript
     {
+        [System.Obsolete]
         public static void SaveVFX(GameObject prefabVFX, List<ParticleSystemOriginalSettings> psOriginalSettingsList)
         {
             var prefabFolderPath = GetPrefabFolder(prefabVFX);

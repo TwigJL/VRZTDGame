@@ -44296,9 +44296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49730f4665afeca42ad00e2711542c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.8
+  speed: 2
   waypoints: []
-  chooseDelay: 1
   slowDuration: 2
   freezeDuration: 1.2
   burnDuration: 5
