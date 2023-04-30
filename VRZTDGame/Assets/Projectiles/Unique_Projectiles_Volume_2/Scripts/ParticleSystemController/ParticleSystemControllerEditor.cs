@@ -9,7 +9,9 @@
 	[CustomEditor(typeof(ParticleSystemController))]
 	public class ParticleSystemControllerEditor : Editor
 	{
-		public override void OnInspectorGUI()
+        [System.Obsolete]
+		#pragma warning disable CS0809
+        public override void OnInspectorGUI()
 		{
 			DrawDefaultInspector();
 
