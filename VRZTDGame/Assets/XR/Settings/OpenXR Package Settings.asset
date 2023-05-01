@@ -568,7 +568,7 @@ MonoBehaviour:
   - {fileID: -1054249456462991462}
   - {fileID: -840623994687387395}
   - {fileID: 2102085439111236330}
-  m_renderMode: 1
+  m_renderMode: 0
   m_depthSubmissionMode: 0
 --- !u!114 &2636490645235102340
 MonoBehaviour:
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e314dfef9af0904e80129bcc0a79361, type: 3}
   m_Name: HandTracking WSA
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Hand Tracking Subsystem
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.handtracking
@@ -774,7 +774,7 @@ MonoBehaviour:
   - {fileID: -977448484796987548}
   - {fileID: -2653653681717583004}
   - {fileID: -5793306016233766782}
-  m_renderMode: 1
+  m_renderMode: 0
   m_depthSubmissionMode: 0
 --- !u!114 &7290801670713729005
 MonoBehaviour:
@@ -842,7 +842,7 @@ MonoBehaviour:
   - {fileID: -7636216464839951167}
   - {fileID: 537208594353617042}
   - {fileID: 9122652088896806116}
-  m_renderMode: 1
+  m_renderMode: 0
   m_depthSubmissionMode: 0
 --- !u!114 &9015495626415593602
 MonoBehaviour:
