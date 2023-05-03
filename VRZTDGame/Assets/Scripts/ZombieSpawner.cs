@@ -28,7 +28,7 @@ public class ZombieSpawner : MonoBehaviour
             GameObject prefab = normalWavePrefabs[Random.Range(0, normalWavePrefabs.Count)];
 
             SpawnZombie(prefab);
-            Debug.Log($"Spawned zombie {spawnedZombies + 1} of {zombiesToSpawn}.");
+            
             spawnedZombies++;
             normalWaveZombiesSpawned++;
             yield return new WaitForSeconds(spawnDelay);
@@ -46,7 +46,7 @@ public class ZombieSpawner : MonoBehaviour
             GameObject prefab = eliteWavePrefabs[Random.Range(0, eliteWavePrefabs.Count)];
 
             SpawnZombie(prefab);
-            Debug.Log($"Spawned zombie {spawnedZombies + 1} of {zombiesToSpawn}.");
+            
             spawnedZombies++;
             eliteWaveZombiesSpawned++;
             yield return new WaitForSeconds(spawnDelay);
@@ -75,7 +75,7 @@ public class ZombieSpawner : MonoBehaviour
             else
             {
                 SpawnZombie(prefab);
-                Debug.Log($"Spawned zombie {spawnedZombies + 1} of {zombiesToSpawn}.");
+            
                 spawnedZombies++;
                 BossWaveZombiesSpawned++;
             }

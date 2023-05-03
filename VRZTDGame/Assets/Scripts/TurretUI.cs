@@ -9,7 +9,9 @@ public class TurretUI : MonoBehaviour
     public Transform playerCamera;
 
     private bool inRange = false;
-
+    void Start(){
+        turretCanvas.gameObject.SetActive(false);
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

@@ -9,12 +9,15 @@ public class GameManager : MonoBehaviour
     public int maxNormalWaveZombies = 10;
     public int maxEliteWaveZombies = 20;
     public int maxBossWaveZombies = 30;
-
+    public AudioSource audioSource;
+    public AudioClip normalWaveClip;
+    public AudioClip eliteWaveClip;
+    public AudioClip bossWaveClip;
     public int waveCT;
     public static List<ZombieBehavior> activeZombies = new List<ZombieBehavior>();
-    public int currentWave = 1;
-    private bool spawnNewWave = false;
-    private int _activeZombiesCount;
+    public bool spawnNewWave = false;
+
+    public int _activeZombiesCount;
     public int ActiveZombiesCount
     {
         get => _activeZombiesCount;
@@ -23,7 +26,7 @@ public class GameManager : MonoBehaviour
             if (_activeZombiesCount != value)
             {
                 _activeZombiesCount = value;
-                Debug.Log("Zombies Alive:" + _activeZombiesCount);
+                Debug.Log("Zombies Alive:" + _activeZombiesCount + "\n" + new System.Diagnostics.StackTrace());
             }
         }
     }
@@ -44,59 +47,78 @@ public class GameManager : MonoBehaviour
         zombieSpawner.maxNormalWaveZombies = maxNormalWaveZombies;
         zombieSpawner.maxEliteWaveZombies = maxEliteWaveZombies;
         zombieSpawner.maxBossWaveZombies = maxBossWaveZombies;
-
         // Spawn a normal wave
-        StartCoroutine(zombieSpawner.SpawnNormalWave());
-
-        waveCT++;
-        Debug.Log("Spawning Normal Wave");
+        ActiveZombiesCount = 10;
+        
+        audioSource.PlayOneShot(normalWaveClip);
+        StartCoroutine(StartFirstWaveWithDelay(10f));
     }
-    private IEnumerator Countdown(int seconds, System.Action onFinish)
+    private IEnumerator StartFirstWaveWithDelay(float delaySeconds)
     {
-        for (int i = seconds; i > 0; i--)
-        {
-            Debug.Log($"Next wave in {i} seconds...");
-            yield return new WaitForSeconds(1.0f);
-        }
-        Debug.Log("Wave Count At " + waveCT);
-        onFinish?.Invoke();
+        audioSource.PlayOneShot(normalWaveClip);
+        Debug.Log($"First wave will start in {delaySeconds} seconds...");
+        yield return new WaitForSeconds(delaySeconds);
+        StartCoroutine(zombieSpawner.SpawnNormalWave());
+        waveCT++;
+        spawnNewWave = true;
+        
     }
 
+    private IEnumerator StartNormalWaveWithDelay(float delaySeconds)
+    {
+        audioSource.PlayOneShot(normalWaveClip);
+        Debug.Log($"Normal wave will start in {delaySeconds} seconds...");
+        yield return new WaitForSeconds(delaySeconds);
+        StartCoroutine(zombieSpawner.SpawnNormalWave());
+        waveCT++;
+        spawnNewWave = true;
+
+    }
+
+    private IEnumerator StartEliteWaveWithDelay(float delaySeconds)
+    {
+        audioSource.PlayOneShot(eliteWaveClip);
+        Debug.Log($"Elite wave will start in {delaySeconds} seconds...");
+        yield return new WaitForSeconds(delaySeconds);
+        StartCoroutine(zombieSpawner.SpawnEliteWave());
+        waveCT++;
+        spawnNewWave = true;
+
+    }
+
+    private IEnumerator StartBossWaveWithDelay(float delaySeconds)
+    {
+        audioSource.PlayOneShot(bossWaveClip);
+        Debug.Log($"Boss wave will start in {delaySeconds} seconds...");
+        yield return new WaitForSeconds(delaySeconds);
+        StartCoroutine(zombieSpawner.SpawnBossWave());
+        waveCT++;
+        spawnNewWave = true;
+
+    }
     private void Update()
     {
-        if (GameManager.activeZombies.Count == 0 && !spawnNewWave)
+        if (GameManager.activeZombies.Count == 0 && spawnNewWave)
         {
-            spawnNewWave = true;
-
-            if (currentWave == waveCT)
+            spawnNewWave = false;
+            if (waveCT % 5 == 0)
             {
-                waveCT++;
-                
-                System.Action spawnWave = null;
-
-                if (waveCT % 5 == 0)
-                {
-                    spawnWave = () => StartCoroutine(zombieSpawner.SpawnBossWave());
-                    Debug.Log("Spawning Boss Wave");
-                }
-                else if (waveCT % 3 == 0)
-                {
-                    spawnWave = () => StartCoroutine(zombieSpawner.SpawnEliteWave());
-                    Debug.Log("Spawning Elite Wave");
-                }
-                else
-                {
-                    spawnWave = () => StartCoroutine(zombieSpawner.SpawnNormalWave());
-                    Debug.Log("Spawning Normal Wave");
-                }
-
-                StartCoroutine(Countdown(10, () =>
-                {
-                    spawnWave();
-                    currentWave++;
-                    spawnNewWave = false;
-                }));
+                Debug.Log("Spawning Boss Wave");
+                StartCoroutine(StartBossWaveWithDelay(3f));
             }
+            else if (waveCT % 3 == 0)
+            {
+                Debug.Log("Spawning Elite Wave");
+                StartCoroutine(StartEliteWaveWithDelay(5f));
+
+            }
+            else
+            {
+                Debug.Log("Spawning Normal Wave");
+                StartCoroutine(StartNormalWaveWithDelay(10f));
+
+            }
+
         }
     }
 
