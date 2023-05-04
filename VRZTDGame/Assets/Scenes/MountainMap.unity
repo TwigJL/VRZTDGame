@@ -453,6 +453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 35430538}
+  - component: {fileID: 35430539}
   m_Layer: 0
   m_Name: Slicer Tower Container
   m_TagString: Untagged
@@ -477,6 +478,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &35430539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35430537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCost: 1500
+  upgradeCosts: b004000034080000
+  sellPrices: dc050000b004000034080000
+  upgradeButtonText: {fileID: 1918184150}
+  sellButtonText: {fileID: 1192556324}
+  towerBehavior: {fileID: 7695893906165489616}
 --- !u!1 &52631949
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -541,7 +560,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.41176474, g: 0.9607843, b: 0.90993404, a: 1}
     m_HighlightedColor: {r: 0.14509803, g: 0.41223863, b: 0.5647059, a: 1}
     m_PressedColor: {r: 0, g: 1, b: 0.9400835, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -898,7 +917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -908,8 +927,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.9622642, g: 0.93065387, b: 0.41304737, a: 1}
     m_HighlightedColor: {r: 0.5660378, g: 0.52616817, b: 0.14684944, a: 1}
-    m_PressedColor: {r: 1, g: 0.9975273, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 0.90654206, b: 0, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1166,7 +1185,7 @@ GameObject:
   - component: {fileID: 112281913}
   - component: {fileID: 112281914}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Photon SellTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1551,7 +1570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1986,6 +2005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 169372494}
+  - component: {fileID: 169372495}
   m_Layer: 0
   m_Name: Ion Cannon Tower Container
   m_TagString: Untagged
@@ -2010,6 +2030,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &169372495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169372493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCost: 600
+  upgradeCosts: e803000078050000
+  sellPrices: 58020000e803000078050000
+  upgradeButtonText: {fileID: 198270019}
+  sellButtonText: {fileID: 1440749873}
+  towerBehavior: {fileID: 269315205121159130}
 --- !u!1 &175365284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,7 +2222,7 @@ GameObject:
   - component: {fileID: 198270020}
   - component: {fileID: 198270019}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Ion UpgradeTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2905,7 +2943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2916,7 +2954,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.41176474, g: 0.9607843, b: 0.90993404, a: 1}
     m_HighlightedColor: {r: 0.14509803, g: 0.41223863, b: 0.5647059, a: 1}
     m_PressedColor: {r: 0, g: 1, b: 0.9400835, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3212,7 +3250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -3223,7 +3261,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.9622642, g: 0.93065387, b: 0.41304737, a: 1}
     m_HighlightedColor: {r: 0.5660378, g: 0.52616817, b: 0.14684944, a: 1}
     m_PressedColor: {r: 1, g: 0.9975273, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4658,7 +4696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -4976,7 +5014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -5834,7 +5872,7 @@ GameObject:
   - component: {fileID: 678454648}
   - component: {fileID: 678454647}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Freeze Ray UpgradeTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6181,7 +6219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -6192,7 +6230,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.41176474, g: 0.9607843, b: 0.90993404, a: 1}
     m_HighlightedColor: {r: 0.14509803, g: 0.41223863, b: 0.5647059, a: 1}
     m_PressedColor: {r: 0, g: 1, b: 0.9400835, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -6339,6 +6377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 744624221}
+  - component: {fileID: 744624222}
   m_Layer: 0
   m_Name: Photon Blaster Tower Container
   m_TagString: Untagged
@@ -6363,6 +6402,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &744624222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744624220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCost: 400
+  upgradeCosts: 20030000e8030000
+  sellPrices: 9001000020030000e8030000
+  upgradeButtonText: {fileID: 881729567}
+  sellButtonText: {fileID: 112281914}
+  towerBehavior: {fileID: 5105956254144476357}
 --- !u!1 &746340775
 GameObject:
   m_ObjectHideFlags: 0
@@ -6686,7 +6743,7 @@ GameObject:
   - component: {fileID: 779643916}
   - component: {fileID: 779643915}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Gauss UpgradeTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7304,7 +7361,7 @@ GameObject:
   - component: {fileID: 881729566}
   - component: {fileID: 881729567}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Photon UpgradeTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12350,6 +12407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 918842682}
+  - component: {fileID: 918842683}
   m_Layer: 0
   m_Name: Gauss Cannon Tower Container
   m_TagString: Untagged
@@ -12374,6 +12432,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &918842683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918842681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCost: 1800
+  upgradeCosts: d0070000a00f0000
+  sellPrices: 08070000d0070000a00f0000
+  upgradeButtonText: {fileID: 779643915}
+  sellButtonText: {fileID: 1396226214}
+  towerBehavior: {fileID: 6467874143815406817}
 --- !u!1 &919890679
 GameObject:
   m_ObjectHideFlags: 0
@@ -12489,7 +12565,7 @@ GameObject:
   - component: {fileID: 929011288}
   - component: {fileID: 929011287}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Rocket SellTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12669,7 +12745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -12680,7 +12756,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.41176474, g: 0.9607843, b: 0.90993404, a: 1}
     m_HighlightedColor: {r: 0.14509803, g: 0.41223863, b: 0.5647059, a: 1}
     m_PressedColor: {r: 0, g: 1, b: 0.9400835, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -13757,7 +13833,7 @@ GameObject:
   - component: {fileID: 1052502310}
   - component: {fileID: 1052502309}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Freeze Ray SellTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13878,7 +13954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -13888,8 +13964,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.9622642, g: 0.93065387, b: 0.41304737, a: 1}
     m_HighlightedColor: {r: 0.5660378, g: 0.52616817, b: 0.14684944, a: 1}
-    m_PressedColor: {r: 1, g: 0.9975273, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 0.90654206, b: 0, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -14242,7 +14318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -14252,8 +14328,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.9622642, g: 0.93065387, b: 0.41304737, a: 1}
     m_HighlightedColor: {r: 0.5660378, g: 0.52616817, b: 0.14684944, a: 1}
-    m_PressedColor: {r: 1, g: 0.9975273, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 0.9097222, b: 0, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -14587,7 +14663,7 @@ GameObject:
   - component: {fileID: 1192556325}
   - component: {fileID: 1192556324}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Slicer SellTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14920,7 +14996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -15042,7 +15118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -15053,7 +15129,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.9622642, g: 0.93065387, b: 0.41304737, a: 1}
     m_HighlightedColor: {r: 0.5660378, g: 0.52616817, b: 0.14684944, a: 1}
     m_PressedColor: {r: 1, g: 0.9975273, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -15305,6 +15381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1266815061}
+  - component: {fileID: 1266815062}
   m_Layer: 0
   m_Name: Freeze Ray Tower Container
   m_TagString: Untagged
@@ -15329,6 +15406,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1266815062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266815060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCost: 1000
+  upgradeCosts: 58020000b0040000
+  sellPrices: e803000058020000b0040000
+  upgradeButtonText: {fileID: 678454647}
+  sellButtonText: {fileID: 1052502309}
+  towerBehavior: {fileID: 3016655204283807334}
 --- !u!1 &1282328014
 GameObject:
   m_ObjectHideFlags: 0
@@ -15584,7 +15679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -15594,8 +15689,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.5158079, g: 0.8867924, b: 0.34718758, a: 1}
     m_HighlightedColor: {r: 0.2103112, g: 0.4056604, b: 0.1549929, a: 1}
-    m_PressedColor: {r: 0.07537111, g: 0.8962264, b: 0.063412234, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.056257706, g: 0.754717, b: 0.046279836, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -15614,7 +15709,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1290419256}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 744624222}
+        m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
+        m_MethodName: UpgradeTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1290419258
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16136,7 +16243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107ebd95141363d41a42d2bb63e628d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrices: 00000000000000000000000000000000000000000000000000000000
+  towerPrices: 9001000020030000e80300000807000058020000d0070000dc050000
   towerPriceTexts:
   - {fileID: 1388344786}
   - {fileID: 1774339354}
@@ -16314,7 +16421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -16324,8 +16431,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.8962264, g: 0.34242615, b: 0.34242615, a: 1}
     m_HighlightedColor: {r: 0.6037736, g: 0.14524741, b: 0.14524741, a: 1}
-    m_PressedColor: {r: 0.8773585, g: 0.086908154, b: 0.086908154, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -16344,7 +16451,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1379303192}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 744624222}
+        m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
+        m_MethodName: SellTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1379303194
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16605,7 +16724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -16616,7 +16735,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.41176474, g: 0.9607843, b: 0.90993404, a: 1}
     m_HighlightedColor: {r: 0.14509803, g: 0.41223863, b: 0.5647059, a: 1}
     m_PressedColor: {r: 0, g: 1, b: 0.9400835, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -16686,7 +16805,7 @@ GameObject:
   - component: {fileID: 1396226215}
   - component: {fileID: 1396226214}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Gauss SellTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16807,7 +16926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -17096,7 +17215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -17107,7 +17226,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.41176474, g: 0.9607843, b: 0.90993404, a: 1}
     m_HighlightedColor: {r: 0.14509803, g: 0.41223863, b: 0.5647059, a: 1}
     m_PressedColor: {r: 0, g: 1, b: 0.9400835, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -17306,7 +17425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -17317,7 +17436,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.41176474, g: 0.9607843, b: 0.90993404, a: 1}
     m_HighlightedColor: {r: 0.14509803, g: 0.41223863, b: 0.5647059, a: 1}
     m_PressedColor: {r: 0, g: 1, b: 0.9400835, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -17387,7 +17506,7 @@ GameObject:
   - component: {fileID: 1440749874}
   - component: {fileID: 1440749873}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Ion SellTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17508,7 +17627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -17713,7 +17832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -17906,6 +18025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1497832262}
+  - component: {fileID: 1497832263}
   m_Layer: 0
   m_Name: Rocket Launcher Tower Container
   m_TagString: Untagged
@@ -17930,6 +18050,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1497832263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497832261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCost: 2000
+  upgradeCosts: dc05000060090000
+  sellPrices: d0070000dc05000060090000
+  upgradeButtonText: {fileID: 1727037845}
+  sellButtonText: {fileID: 929011287}
+  towerBehavior: {fileID: 7128372103957879122}
 --- !u!1 &1511531914
 GameObject:
   m_ObjectHideFlags: 0
@@ -18090,7 +18228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -18884,6 +19022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1566694823}
+  - component: {fileID: 1566694824}
   m_Layer: 0
   m_Name: Flame Thrower Container
   m_TagString: Untagged
@@ -18908,6 +19047,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1566694824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566694822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCost: 800
+  upgradeCosts: 9001000058020000
+  sellPrices: 200300009001000058020000
+  upgradeButtonText: {fileID: 1787759620}
+  sellButtonText: {fileID: 1848483013}
+  towerBehavior: {fileID: 2995089298688044600}
 --- !u!1 &1576097269
 GameObject:
   m_ObjectHideFlags: 0
@@ -19535,7 +19692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -19546,7 +19703,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.9622642, g: 0.93065387, b: 0.41304737, a: 1}
     m_HighlightedColor: {r: 0.5660378, g: 0.52616817, b: 0.14684944, a: 1}
     m_PressedColor: {r: 1, g: 0.9975273, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -20410,7 +20567,7 @@ GameObject:
   - component: {fileID: 1727037846}
   - component: {fileID: 1727037845}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Rocket UpgradeTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20533,7 +20690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -20695,7 +20852,7 @@ GameObject:
   - component: {fileID: 1787759621}
   - component: {fileID: 1787759620}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Flame Thrower UpgradeTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21052,7 +21209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -21225,7 +21382,7 @@ GameObject:
   - component: {fileID: 1848483014}
   - component: {fileID: 1848483013}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Flame Thrower SellTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21755,7 +21912,7 @@ GameObject:
   - component: {fileID: 1918184151}
   - component: {fileID: 1918184150}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Slicer UpgradeTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22435,7 +22592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -22557,7 +22714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -82378,7 +82535,7 @@ MonoBehaviour:
     type: 3}
   m_ModelParent: {fileID: 9014170784916695632}
   m_Model: {fileID: 0}
-  m_AnimateModel: 1
+  m_AnimateModel: 0
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
   m_PositionAction:
@@ -83002,7 +83159,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 1
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
