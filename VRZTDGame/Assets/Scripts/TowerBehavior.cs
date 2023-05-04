@@ -7,7 +7,19 @@ public class TowerBehavior : MonoBehaviour
     public float rotationSpeed = 5f;
     public string targetTag = "Zombie";
     public bool trackTarget = true;
+    public int _towerLevel = 1;
+    public GameObject rangeVisualizationObject;
+    public int towerLevel
+    {
+        get { return _towerLevel; }
+        set
+        {
+            _towerLevel = value;
+            UpdateTowerRange(); // Update the tower's range when the tower level changes
+        }
+    }
     public Transform target;
+    public List<float> rangeValues;
     private SphereCollider towerRange;
     private List<Transform> targetsInCollider = new List<Transform>();
     private Animator animator;
@@ -16,6 +28,7 @@ public class TowerBehavior : MonoBehaviour
     {
         towerRange = GetComponent<SphereCollider>();
         animator = GetComponent<Animator>();
+        UpdateTowerRange();
     }
 
     void Update()
@@ -99,5 +112,17 @@ public class TowerBehavior : MonoBehaviour
             } 
         }
         target = closestTarget;
+    }
+    void UpdateTowerRange()
+    {
+        if (towerLevel > 0 && towerLevel <= rangeValues.Count)
+        {
+            towerRange.radius = rangeValues[towerLevel - 1];
+            if (rangeVisualizationObject != null)
+            {
+                float newScale = towerRange.radius * 2f;
+                rangeVisualizationObject.transform.localScale = new Vector3(newScale, newScale, newScale);
+            }
+        }
     }
 }

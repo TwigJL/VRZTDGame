@@ -14,6 +14,9 @@ public class ZombieBehavior : MonoBehaviour
     public int burnDamagePerSecond = 10;
     public int maxHealth = 100;
     public int health;
+    public int zombieValue = 100;
+    public GameManager gameManager;
+    public int damage = 5;
     private bool isSlowed = false;
     private float normalSpeed;
     private Coroutine slowCoroutine;
@@ -31,12 +34,14 @@ public class ZombieBehavior : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
         normalSpeed = speed;
         health = maxHealth;
         animator.SetFloat("Speed", speed);
         zombieLayer = LayerMask.GetMask("Zombie");
         DisableAllEffectParticles();
+        
     }
     private void DisableAllEffectParticles()
     {
@@ -249,6 +254,12 @@ public class ZombieBehavior : MonoBehaviour
     public void ApplyDamage(int damage)
     {
         health -= damage;
+        if (zombieValue > 0)
+        {
+            int valueDecrease = Mathf.Min(zombieValue, damage);
+            zombieValue -= valueDecrease;
+            gameManager.AddCurrency(valueDecrease);
+        }
         if (health <= 0)
         {
             DestroyZombie();

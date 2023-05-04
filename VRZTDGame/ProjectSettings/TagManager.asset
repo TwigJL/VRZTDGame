@@ -9,6 +9,8 @@ TagManager:
   - Tower
   - BossZombie
   - GameManager
+  - Shop
+  - Inventory
   layers:
   - Default
   - TransparentFX
@@ -22,9 +24,9 @@ TagManager:
   - AOE
   - Chain
   - Tower
+  - RailGun
   - 
-  - 
-  - 
+  - Photon
   - 
   - 
   - 

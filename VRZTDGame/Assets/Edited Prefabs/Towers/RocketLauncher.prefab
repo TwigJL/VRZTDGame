@@ -542,9 +542,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1a9a5373e4652439963e7ba41b0489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1989904040482234, guid: 8e6468b3a59d76348a1c9aa2c58642d4,
-    type: 3}
-  fireRate: 0.3
+  projectilePrefabs:
+  - {fileID: 8672109865229682000, guid: 8ecd79909a1d43148ad1c75398c0cbc5, type: 3}
+  - {fileID: 6960834874424578728, guid: f44fa0554893c7a4380d06884621e681, type: 3}
+  - {fileID: 6312516463912754951, guid: bd281a973525fce499448b8cc5134b08, type: 3}
+  fireRates:
+  - 0.3
+  - 0.5
+  - 0.8
   firePoint: {fileID: 7128372103241345676}
   autoFire: 1
   towerBehavior: {fileID: 7128372104465296930}
@@ -576,7 +581,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7128372104465296942}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 564.2, y: 10.4, z: 379.4}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
@@ -651,6 +656,7 @@ MonoBehaviour:
   rotationSpeed: 5
   targetTag: Zombie
   trackTarget: 1
+  towerLevel: 1
   target: {fileID: 0}
 --- !u!135 &3049521995847168784
 SphereCollider:
@@ -709,9 +715,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1a9a5373e4652439963e7ba41b0489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1989904040482234, guid: 8e6468b3a59d76348a1c9aa2c58642d4,
-    type: 3}
-  fireRate: 0.3
+  projectilePrefabs:
+  - {fileID: 8672109865229682000, guid: 8ecd79909a1d43148ad1c75398c0cbc5, type: 3}
+  - {fileID: 6960834874424578728, guid: f44fa0554893c7a4380d06884621e681, type: 3}
+  - {fileID: 6312516463912754951, guid: bd281a973525fce499448b8cc5134b08, type: 3}
+  fireRates:
+  - 0.3
+  - 0.5
+  - 0.8
   firePoint: {fileID: 7128372104684738034}
   autoFire: 1
   towerBehavior: {fileID: 7128372104465296930}
@@ -760,9 +771,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1a9a5373e4652439963e7ba41b0489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1989904040482234, guid: 8e6468b3a59d76348a1c9aa2c58642d4,
-    type: 3}
-  fireRate: 0.3
+  projectilePrefabs:
+  - {fileID: 8672109865229682000, guid: 8ecd79909a1d43148ad1c75398c0cbc5, type: 3}
+  - {fileID: 6960834874424578728, guid: f44fa0554893c7a4380d06884621e681, type: 3}
+  - {fileID: 6312516463912754951, guid: bd281a973525fce499448b8cc5134b08, type: 3}
+  fireRates:
+  - 0.3
+  - 0.5
+  - 0.8
   firePoint: {fileID: 7128372104739110051}
   autoFire: 1
   towerBehavior: {fileID: 7128372104465296930}

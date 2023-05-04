@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class ProjectileLauncher : MonoBehaviour
 {
-    public GameObject projectilePrefab;
-    public float fireRate = 1f;
+    public GameObject[] projectilePrefabs;
+    public float[] fireRates; // Changed to an array of floats
     public Transform firePoint;
     public bool autoFire = true;
 
-    public TowerBehavior towerBehavior; // Changed to public
+    public TowerBehavior towerBehavior;
     private float fireTimer;
     public float projectileSpeed;
 
     void Start()
     {
-        // Removed the GetComponent<TowerBehavior>() line
         fireTimer = 0f;
     }
 
@@ -23,27 +22,40 @@ public class ProjectileLauncher : MonoBehaviour
     {
         if (towerBehavior != null && towerBehavior.target != null && autoFire)
         {
-            fireTimer += Time.deltaTime;
-            if (fireTimer >= 1f / fireRate)
+            int towerLevel = towerBehavior.towerLevel;
+
+            if (towerLevel > 0 && towerLevel <= fireRates.Length)
             {
-                FireProjectile(towerBehavior.target);
-                fireTimer = 0f;
+                float fireRate = fireRates[towerLevel - 1]; // Get the fire rate based on the tower level
+
+                fireTimer += Time.deltaTime;
+                if (fireTimer >= 1f / fireRate)
+                {
+                    FireProjectile(towerBehavior.target);
+                    fireTimer = 0f;
+                }
             }
         }
     }
 
     public void FireProjectile(Transform target)
     {
-        if (projectilePrefab != null && firePoint != null)
+        int towerLevel = towerBehavior.towerLevel;
+
+        if (towerLevel > 0 && towerLevel <= projectilePrefabs.Length)
         {
-            GameObject projectileInstance = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-            Projectile projectileScript = projectileInstance.GetComponent<Projectile>();
-            if (projectileScript != null)
+            GameObject projectilePrefab = projectilePrefabs[towerLevel - 1];
+
+            if (projectilePrefab != null && firePoint != null)
             {
-                projectileScript.SetTarget(target);
-                projectileScript.SetSpeed(projectileSpeed); // Set the projectile speed
+                GameObject projectileInstance = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+                Projectile projectileScript = projectileInstance.GetComponent<Projectile>();
+                if (projectileScript != null)
+                {
+                    projectileScript.SetTarget(target);
+                    projectileScript.SetSpeed(projectileSpeed);
+                }
             }
         }
     }
-
 }

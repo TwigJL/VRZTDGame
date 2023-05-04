@@ -16,8 +16,9 @@ public class GameManager : MonoBehaviour
     public int waveCT;
     public static List<ZombieBehavior> activeZombies = new List<ZombieBehavior>();
     public bool spawnNewWave = false;
-
+    public int currency = 800;
     public int _activeZombiesCount;
+    public Shop shop;
     public int ActiveZombiesCount
     {
         get => _activeZombiesCount;
@@ -29,6 +30,10 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Zombies Alive:" + _activeZombiesCount + "\n" + new System.Diagnostics.StackTrace());
             }
         }
+    }
+    public void AddCurrency(int amount)
+    {
+        currency += amount;
     }
     private void Awake()
     {
