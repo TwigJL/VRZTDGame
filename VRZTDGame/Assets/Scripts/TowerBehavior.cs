@@ -29,7 +29,7 @@ public class TowerBehavior : MonoBehaviour
         towerRange = GetComponent<SphereCollider>();
         animator = GetComponent<Animator>();
         UpdateTowerRange();
-    }
+   }
 
     void Update()
     {

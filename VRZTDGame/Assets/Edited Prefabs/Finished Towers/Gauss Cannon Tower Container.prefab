@@ -1492,6 +1492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInTowerSpace: 0
+  Range: {fileID: 80179011802215573}
 --- !u!1 &4661804523225417751
 GameObject:
   m_ObjectHideFlags: 0
