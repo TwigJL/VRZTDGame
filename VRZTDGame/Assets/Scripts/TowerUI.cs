@@ -24,7 +24,10 @@ public class TowerUI : MonoBehaviour
         if (towerSpace.playerInTowerSpace)
         {
             TowerUICanvas.gameObject.SetActive(true);
-            TowerUICanvas.transform.LookAt(playerCamera);
+            Vector3 lookDirection = playerCamera.position - TowerUICanvas.transform.position;
+            lookDirection.y = 0; // Keep the y value of the lookDirection to 0 if you want the canvas to stay at the same height
+            Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+            TowerUICanvas.transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y + 180, 0); // Rotate the canvas 180 degrees around the Y-axis
             UpdateUIText();
         }else{
             TowerUICanvas.gameObject.SetActive(false);
