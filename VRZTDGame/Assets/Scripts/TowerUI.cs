@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class TowerUI : MonoBehaviour
 {
     public Canvas TowerUICanvas;
-    public BoxCollider triggerCollider;
     public Transform playerCamera;
     public Text rangeText; // UI text component for range
     public Text fireRateText; // UI text component for fire rate
@@ -13,34 +12,22 @@ public class TowerUI : MonoBehaviour
     public List<string> rangeValues; // List of range values for each level
     public List<string> fireRateValues; // List of fire rate values for each level
     public List<string> damageValues;
-    private bool inRange = false;
+    
     public TowerBehavior towerBehavior;
+    public TowerSpace towerSpace;
     void Start(){
         TowerUICanvas.gameObject.SetActive(false);
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            inRange = true;
-            TowerUICanvas.gameObject.SetActive(true);
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            inRange = false;
-            TowerUICanvas.gameObject.SetActive(false);
-        }
     }
 
     void Update()
     {
-        if (inRange)
+        if (towerSpace.playerInTowerSpace)
         {
+            TowerUICanvas.gameObject.SetActive(true);
             TowerUICanvas.transform.LookAt(playerCamera);
+            UpdateUIText();
+        }else{
+            TowerUICanvas.gameObject.SetActive(false);
         }
     }
     void UpdateUIText()

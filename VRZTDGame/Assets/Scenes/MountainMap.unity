@@ -126,19 +126,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!65 &28
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5105956254575277327}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 30, y: 30, z: 30}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &29
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerUICanvas: {fileID: 1949126121}
-  triggerCollider: {fileID: 28}
   playerCamera: {fileID: 9014170784745310931}
   rangeText: {fileID: 648421741}
   fireRateText: {fileID: 1940106003}
@@ -170,6 +156,7 @@ MonoBehaviour:
   - 4 < 6
   - 6
   towerBehavior: {fileID: 5105956254144476357}
+  towerSpace: {fileID: 1941723098}
 --- !u!1 &1073397
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +825,7 @@ GameObject:
   - component: {fileID: 70657824}
   - component: {fileID: 70657823}
   m_Layer: 0
-  m_Name: BuyBT
+  m_Name: Ion Cannon BuyBT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -908,7 +895,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 70657824}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1341338326}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: PurchaseIonCannon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &70657824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3107,7 +3106,7 @@ GameObject:
   - component: {fileID: 315821071}
   - component: {fileID: 315821070}
   m_Layer: 0
-  m_Name: BuyBT
+  m_Name: Freeze Ray BuyBT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3177,7 +3176,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 315821071}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1341338326}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: PurchaseFreezeRay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &315821071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3424,7 +3435,7 @@ GameObject:
   - component: {fileID: 351622087}
   - component: {fileID: 351622086}
   m_Layer: 0
-  m_Name: BuyBT
+  m_Name: Gauss Cannon BuyBT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3494,7 +3505,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 351622087}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1341338326}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: PurchaseGaussCannon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &351622087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4203,6 +4226,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477941817}
   m_CullTransparentMesh: 1
+--- !u!1 &520133546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 520133549}
+  - component: {fileID: 520133548}
+  - component: {fileID: 520133547}
+  m_Layer: 11
+  m_Name: Freeze Ray Tower Space
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &520133547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520133546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1320eb174bf6e446a36dbd0205de246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInTowerSpace: 0
+--- !u!65 &520133548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520133546}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 15, z: 30}
+  m_Center: {x: 0, y: 2.8542426, z: 0.050728083}
+--- !u!4 &520133549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520133546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3016655203659866370}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &524279220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4398,6 +4480,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532016731}
   m_CullTransparentMesh: 1
+--- !u!1 &546259342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546259345}
+  - component: {fileID: 546259344}
+  - component: {fileID: 546259343}
+  m_Layer: 11
+  m_Name: Ion Cannon Tower Space
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &546259343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546259342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1320eb174bf6e446a36dbd0205de246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInTowerSpace: 0
+--- !u!65 &546259344
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546259342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 25, z: 30}
+  m_Center: {x: 0, y: 2.8029802, z: 0.050728083}
+--- !u!4 &546259345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546259342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 269315206768811269}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &549395420
 GameObject:
   m_ObjectHideFlags: 0
@@ -6774,6 +6915,65 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Range: 1 < 1.5'
+--- !u!1 &823970539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 823970542}
+  - component: {fileID: 823970541}
+  - component: {fileID: 823970540}
+  m_Layer: 11
+  m_Name: Guass Cannon Tower Space
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &823970540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823970539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1320eb174bf6e446a36dbd0205de246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInTowerSpace: 0
+--- !u!65 &823970541
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823970539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 15, z: 30}
+  m_Center: {x: 0, y: 3.6790729, z: 1.1171746}
+--- !u!4 &823970542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823970539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6467874143016868479}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &848184339
 GameObject:
   m_ObjectHideFlags: 0
@@ -12221,6 +12421,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929011285}
   m_CullTransparentMesh: 1
+--- !u!1 &932793529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 932793532}
+  - component: {fileID: 932793531}
+  - component: {fileID: 932793530}
+  m_Layer: 11
+  m_Name: Flame Thrower Tower Space
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &932793530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932793529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1320eb174bf6e446a36dbd0205de246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInTowerSpace: 0
+--- !u!65 &932793531
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932793529}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 5, z: 4}
+  m_Center: {x: -0.007990599, y: 0.25, z: -0.00018626451}
+--- !u!4 &932793532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932793529}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2995089298688044603}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &952430445
 GameObject:
   m_ObjectHideFlags: 0
@@ -13447,7 +13706,7 @@ GameObject:
   - component: {fileID: 1088394450}
   - component: {fileID: 1088394449}
   m_Layer: 0
-  m_Name: BuyBT
+  m_Name: Rocket Launcher BuyBT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13517,7 +13776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1088394450}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1341338326}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: PurchaseRocketLauncher
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1088394450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13799,7 +14070,7 @@ GameObject:
   - component: {fileID: 1121298664}
   - component: {fileID: 1121298663}
   m_Layer: 0
-  m_Name: BuyBT
+  m_Name: Slicer BuyBT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13869,7 +14140,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1121298664}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1341338326}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: PurchaseSlicer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1121298664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13994,6 +14277,65 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2108220091}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1179132002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1179132005}
+  - component: {fileID: 1179132004}
+  - component: {fileID: 1179132003}
+  m_Layer: 11
+  m_Name: Slicer Tower Space
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1179132003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179132002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1320eb174bf6e446a36dbd0205de246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInTowerSpace: 0
+--- !u!65 &1179132004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179132002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 15, z: 30}
+  m_Center: {x: 0, y: 3.6790729, z: 1.1171746}
+--- !u!4 &1179132005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179132002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7695893906029441117}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189864238
 GameObject:
   m_ObjectHideFlags: 0
@@ -14393,20 +14735,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!136 &1203722530
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203722521}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 2.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1211093477
 GameObject:
   m_ObjectHideFlags: 0
@@ -14542,7 +14870,7 @@ GameObject:
   - component: {fileID: 1232305580}
   - component: {fileID: 1232305579}
   m_Layer: 0
-  m_Name: BuyBT
+  m_Name: Photon Blaster BuyBT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14612,7 +14940,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1232305580}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1341338326}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: PurchasePhotonBlaster
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1232305580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14749,7 +15089,7 @@ GameObject:
   - component: {fileID: 1251882215}
   - component: {fileID: 1251882214}
   m_Layer: 0
-  m_Name: RaPrice
+  m_Name: IoPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17917,6 +18257,65 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1561214370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1561214373}
+  - component: {fileID: 1561214372}
+  - component: {fileID: 1561214371}
+  m_Layer: 11
+  m_Name: Rocket Launcher Tower Space
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1561214371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561214370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1320eb174bf6e446a36dbd0205de246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInTowerSpace: 0
+--- !u!65 &1561214372
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561214370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 15, z: 30}
+  m_Center: {x: 0.00000071525574, y: 1.2399676, z: -0.0000019073486}
+--- !u!4 &1561214373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561214370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7128372103957879135}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1561320989
 GameObject:
   m_ObjectHideFlags: 0
@@ -18788,7 +19187,7 @@ GameObject:
   - component: {fileID: 1647139077}
   - component: {fileID: 1647139076}
   m_Layer: 0
-  m_Name: RailGunIMG
+  m_Name: IonCannonIMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18866,7 +19265,7 @@ GameObject:
   - component: {fileID: 1648676609}
   - component: {fileID: 1648676608}
   m_Layer: 0
-  m_Name: BuyBT
+  m_Name: Flame Thrower BuyBT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18937,7 +19336,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1648676609}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1341338326}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: PurchaseFlameThrower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1648676609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20136,7 +20547,7 @@ GameObject:
   - component: {fileID: 1803350892}
   - component: {fileID: 1803350891}
   m_Layer: 0
-  m_Name: RailGun
+  m_Name: IonCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21455,6 +21866,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941014467}
   m_CullTransparentMesh: 1
+--- !u!1 &1941723097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1941723100}
+  - component: {fileID: 1941723099}
+  - component: {fileID: 1941723098}
+  m_Layer: 11
+  m_Name: Photon Tower Space
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1941723098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941723097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1320eb174bf6e446a36dbd0205de246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInTowerSpace: 0
+--- !u!65 &1941723099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941723097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 30, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1941723100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941723097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5105956254575175983}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1949126117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23007,7 +23477,7 @@ PrefabInstance:
     - target: {fileID: 1696014694992928748, guid: d079cd0e6137a44b58864c3a91ad119a,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2437060625171721727, guid: d079cd0e6137a44b58864c3a91ad119a,
         type: 3}
@@ -65571,6 +66041,7 @@ Transform:
   - {fileID: 269315206768811271}
   - {fileID: 962759416897775078}
   - {fileID: 1073398}
+  - {fileID: 546259345}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -65624,7 +66095,6 @@ GameObject:
   - component: {fileID: 269315205121159130}
   - component: {fileID: 269315206776500967}
   - component: {fileID: 269315205121159132}
-  - component: {fileID: 269315206776500966}
   m_Layer: 11
   m_Name: Ion Cannon Tower
   m_TagString: Tower
@@ -65821,19 +66291,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &269315206776500966
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269315206769230117}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 30, y: 25, z: 30}
-  m_Center: {x: 0, y: 2.8029802, z: 0.050728083}
 --- !u!114 &269315206776500967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65847,7 +66304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerUICanvas: {fileID: 1073402}
-  triggerCollider: {fileID: 269315206776500966}
   playerCamera: {fileID: 9014170784745310931}
   rangeText: {fileID: 273380380}
   fireRateText: {fileID: 301535542}
@@ -65865,6 +66321,7 @@ MonoBehaviour:
   - 140 < 160
   - 160
   towerBehavior: {fileID: 269315205121159130}
+  towerSpace: {fileID: 546259343}
 --- !u!1 &302636117596094812
 GameObject:
   m_ObjectHideFlags: 0
@@ -69355,7 +69812,6 @@ GameObject:
   - component: {fileID: 2995089298688044600}
   - component: {fileID: 2995089298688044609}
   - component: {fileID: 2995089298688044601}
-  - component: {fileID: 2995089298688044608}
   m_Layer: 11
   m_Name: Flame Thrower Tower
   m_TagString: Tower
@@ -69413,6 +69869,7 @@ Transform:
   - {fileID: 2995089298117329030}
   - {fileID: 4436857259834095596}
   - {fileID: 1669024871}
+  - {fileID: 932793532}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69466,19 +69923,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2995089298688044598}
   m_Mesh: {fileID: 4300000, guid: 0ba5845e393991c44ba851e1dd2fa657, type: 3}
---- !u!65 &2995089298688044608
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2995089298688044598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 5, z: 4}
-  m_Center: {x: -0.007990599, y: 0.25, z: -0.00018626451}
 --- !u!114 &2995089298688044609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69492,7 +69936,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerUICanvas: {fileID: 1669024875}
-  triggerCollider: {fileID: 2995089298688044608}
   playerCamera: {fileID: 9014170784745310931}
   rangeText: {fileID: 2105851856}
   fireRateText: {fileID: 1870217535}
@@ -69510,6 +69953,7 @@ MonoBehaviour:
   - 6 < 8
   - 8
   towerBehavior: {fileID: 2995089298688044600}
+  towerSpace: {fileID: 932793530}
 --- !u!23 &2995089298779390340
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70334,6 +70778,7 @@ Transform:
   - {fileID: 3016655203659866374}
   - {fileID: 2027177526384580312}
   - {fileID: 1027547818}
+  - {fileID: 520133549}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -70386,7 +70831,6 @@ GameObject:
   - component: {fileID: 3016655204283807334}
   - component: {fileID: 3016655204283807358}
   - component: {fileID: 3016655204283807356}
-  - component: {fileID: 3016655204283807357}
   m_Layer: 11
   m_Name: Freeze Ray Tower
   m_TagString: Tower
@@ -70465,19 +70909,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 100
   m_Center: {x: 3.9212076e-14, y: 3.6790729, z: 1.1171746}
---- !u!65 &3016655204283807357
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3016655203660037410}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 30, y: 15, z: 30}
-  m_Center: {x: 0, y: 2.8542426, z: 0.050728083}
 --- !u!114 &3016655204283807358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70491,7 +70922,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerUICanvas: {fileID: 1027547822}
-  triggerCollider: {fileID: 3016655204283807357}
   playerCamera: {fileID: 9014170784745310931}
   rangeText: {fileID: 562256725}
   fireRateText: {fileID: 175365287}
@@ -70509,6 +70939,7 @@ MonoBehaviour:
   - 8 < 10
   - 10
   towerBehavior: {fileID: 3016655204283807334}
+  towerSpace: {fileID: 520133547}
 --- !u!135 &3049521996421809248
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -70887,7 +71318,7 @@ MonoBehaviour:
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
-  m_GravityApplicationMode: 0
+  m_GravityApplicationMode: 1
   m_ForwardSource: {fileID: 9014170784745310931}
   m_LeftHandMoveAction:
     m_UseReference: 1
@@ -70934,7 +71365,7 @@ CharacterController:
   m_Height: 1.36144
   m_Radius: 0.1
   m_SlopeLimit: 45
-  m_StepOffset: 0.5
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.76072, z: 0}
@@ -74093,6 +74524,7 @@ Transform:
   - {fileID: 5105956254575175979}
   - {fileID: 918403338500495188}
   - {fileID: 1949126117}
+  - {fileID: 1941723100}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74164,7 +74596,6 @@ GameObject:
   - component: {fileID: 5105956254568007375}
   - component: {fileID: 5105956254144476357}
   - component: {fileID: 29}
-  - component: {fileID: 28}
   - component: {fileID: 5105956254144476354}
   m_Layer: 11
   m_Name: PhotonBlasterTower
@@ -76242,7 +76673,6 @@ GameObject:
   - component: {fileID: 6467874143815406817}
   - component: {fileID: 6467874143815406826}
   - component: {fileID: 6467874143815406824}
-  - component: {fileID: 6467874143815406825}
   m_Layer: 11
   m_Name: Gauss Cannon Tower
   m_TagString: Tower
@@ -76317,6 +76747,7 @@ Transform:
   - {fileID: 6467874143016868469}
   - {fileID: 2944525974919639638}
   - {fileID: 265302818}
+  - {fileID: 823970542}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76432,19 +76863,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 100
   m_Center: {x: 3.9212076e-14, y: 3.6790729, z: 1.1171746}
---- !u!65 &6467874143815406825
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6467874143016830559}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 30, y: 15, z: 30}
-  m_Center: {x: 0, y: 3.6790729, z: 1.1171746}
 --- !u!114 &6467874143815406826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76458,7 +76876,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerUICanvas: {fileID: 265302822}
-  triggerCollider: {fileID: 6467874143815406825}
   playerCamera: {fileID: 9014170784745310931}
   rangeText: {fileID: 1692690206}
   fireRateText: {fileID: 152128023}
@@ -76476,6 +76893,7 @@ MonoBehaviour:
   - 16
   - 18
   towerBehavior: {fileID: 6467874143815406817}
+  towerSpace: {fileID: 823970540}
 --- !u!23 &6474270348486979901
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78145,7 +78563,6 @@ GameObject:
   - component: {fileID: 7128372103957879122}
   - component: {fileID: 7128372103957879137}
   - component: {fileID: 3049521996421809248}
-  - component: {fileID: 7128372103957879136}
   m_Layer: 11
   m_Name: Rocket Launcher Tower
   m_TagString: Tower
@@ -78168,22 +78585,10 @@ Transform:
   - {fileID: 7128372104202937852}
   - {fileID: 2784082170711598652}
   - {fileID: 1818887155}
+  - {fileID: 1561214373}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7128372103957879136
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128372103957879134}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 30, y: 15, z: 30}
-  m_Center: {x: 0.00000071525574, y: 1.2399676, z: -0.0000019073486}
 --- !u!114 &7128372103957879137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78197,7 +78602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerUICanvas: {fileID: 1818887159}
-  triggerCollider: {fileID: 7128372103957879136}
   playerCamera: {fileID: 9014170784745310931}
   rangeText: {fileID: 795120302}
   fireRateText: {fileID: 1308257953}
@@ -78215,6 +78619,7 @@ MonoBehaviour:
   - 55 < 60
   - 60
   towerBehavior: {fileID: 7128372103957879122}
+  towerSpace: {fileID: 1561214371}
 --- !u!4 &7128372104118542978
 Transform:
   m_ObjectHideFlags: 0
@@ -79346,6 +79751,7 @@ Transform:
   - {fileID: 7695893906029441119}
   - {fileID: 7741585710813673066}
   - {fileID: 1282328015}
+  - {fileID: 1179132005}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -79418,7 +79824,6 @@ GameObject:
   - component: {fileID: 7695893906165489616}
   - component: {fileID: 7695893906165489629}
   - component: {fileID: 7695893906165489626}
-  - component: {fileID: 7695893906165489628}
   m_Layer: 11
   m_Name: Slicer Tower
   m_TagString: Tower
@@ -79500,19 +79905,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &7695893906165489628
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7695893906029669501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 30, y: 15, z: 30}
-  m_Center: {x: 0, y: 3.6790729, z: 1.1171746}
 --- !u!114 &7695893906165489629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79526,7 +79918,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerUICanvas: {fileID: 1282328019}
-  triggerCollider: {fileID: 7695893906165489628}
   playerCamera: {fileID: 9014170784745310931}
   rangeText: {fileID: 1051380227}
   fireRateText: {fileID: 1701990387}
@@ -79544,6 +79935,7 @@ MonoBehaviour:
   - 12 < 15
   - 15
   towerBehavior: {fileID: 7695893906165489616}
+  towerSpace: {fileID: 1179132003}
 --- !u!4 &7695893906589917538
 Transform:
   m_ObjectHideFlags: 0
@@ -79730,9 +80122,10 @@ GameObject:
   - component: {fileID: 2140833952612194312}
   - component: {fileID: 3127728406767587643}
   - component: {fileID: 3127728406767587646}
+  - component: {fileID: 7873184976171356686}
   m_Layer: 2
   m_Name: XR Origin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79958,6 +80351,20 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 9014170784923227891}
   m_RequestedTrackingOriginMode: 1
   m_CameraYOffset: 1.36144
+--- !u!64 &7873184976171356686
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7696548425561445260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
 --- !u!1 &7873341816473872091
 GameObject:
   m_ObjectHideFlags: 0

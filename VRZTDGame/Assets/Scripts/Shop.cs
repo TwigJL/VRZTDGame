@@ -12,7 +12,6 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-        gameManager.currency = int.Parse(currencyText.text);
         UpdateTowerPricesText(); // Call this method at the start to update tower prices text
     }
     private void Update(){
@@ -66,7 +65,7 @@ public class Shop : MonoBehaviour
         PurchaseTower(3);
     }
 
-    public void PurchaseRailGun()
+    public void PurchaseIonCannon()
     {
         PurchaseTower(4);
     }
