@@ -11,6 +11,7 @@ TagManager:
   - GameManager
   - Shop
   - Inventory
+  - Right Ray Interactor
   layers:
   - Default
   - TransparentFX

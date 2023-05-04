@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +16,7 @@ public class TowerUI : MonoBehaviour
     public TowerSpace towerSpace;
     void Start(){
         TowerUICanvas.gameObject.SetActive(false);
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
     }
 
     void Update()
