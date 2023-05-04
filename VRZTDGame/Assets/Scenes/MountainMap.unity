@@ -158,16 +158,16 @@ MonoBehaviour:
   fireRateText: {fileID: 1940106003}
   damageText: {fileID: 776407783}
   rangeValues:
-  - 50
-  - 65
+  - 50 < 65
+  - 65 < 75
   - 75
   fireRateValues:
-  - 15
-  - 18
+  - 15 < 18
+  - 18 < 20
   - 20
   damageValues:
-  - 2
-  - 4
+  - 2 < 4
+  - 4 < 6
   - 6
   towerBehavior: {fileID: 5105956254144476357}
 --- !u!1 &1073397
@@ -65853,16 +65853,16 @@ MonoBehaviour:
   fireRateText: {fileID: 301535542}
   damageText: {fileID: 1912742559}
   rangeValues:
-  - 150
-  - 165
+  - 150 < 165
+  - 165 < 180
   - 180
   fireRateValues:
-  - 0.5
-  - 0.8
+  - 0.5 < 0.8
+  - 0.8 < 1
   - 1
   damageValues:
-  - 120
-  - 140
+  - 120 < 140
+  - 140 < 160
   - 160
   towerBehavior: {fileID: 269315205121159130}
 --- !u!1 &302636117596094812
@@ -69498,16 +69498,16 @@ MonoBehaviour:
   fireRateText: {fileID: 1870217535}
   damageText: {fileID: 1021596045}
   rangeValues:
-  - 50
-  - 70
+  - 50 < 70
+  - 70 < 100
   - 100
   fireRateValues:
-  - 15
-  - 18
+  - 15 < 18
+  - 18 < 21
   - 21
   damageValues:
-  - 4
-  - 6
+  - 4 < 6
+  - 6 < 8
   - 8
   towerBehavior: {fileID: 2995089298688044600}
 --- !u!23 &2995089298779390340
@@ -70497,16 +70497,16 @@ MonoBehaviour:
   fireRateText: {fileID: 175365287}
   damageText: {fileID: 351095096}
   rangeValues:
-  - 100
-  - 120
+  - 100 < 120
+  - 120 < 140
   - 140
   fireRateValues:
-  - 0.8
-  - 1
+  - 0.8 < 1
+  - 1 < 1.3
   - 1.3
   damageValues:
-  - 6
-  - 8
+  - 6 < 8
+  - 8 < 10
   - 10
   towerBehavior: {fileID: 3016655204283807334}
 --- !u!135 &3049521996421809248
@@ -78203,16 +78203,16 @@ MonoBehaviour:
   fireRateText: {fileID: 1308257953}
   damageText: {fileID: 1843741619}
   rangeValues:
-  - 100
-  - 125
+  - 100 < 125
+  - 125 < 150
   - 150
   fireRateValues:
-  - 0.3
-  - 0.5
+  - 0.3 < 0.5
+  - 0.5 < 0.8
   - 0.8
   damageValues:
-  - 50
-  - 55
+  - 50 < 55
+  - 55 < 60
   - 60
   towerBehavior: {fileID: 7128372103957879122}
 --- !u!4 &7128372104118542978
@@ -79532,16 +79532,16 @@ MonoBehaviour:
   fireRateText: {fileID: 1701990387}
   damageText: {fileID: 1392435090}
   rangeValues:
-  - 100
-  - 120
+  - 100 < 120
+  - 120 < 140
   - 140
   fireRateValues:
-  - 1.2
-  - 1.5
+  - 1.2 < 1.5
+  - 1.5 < 2
   - 2
   damageValues:
-  - 10
-  - 12
+  - 10 < 12
+  - 12 < 15
   - 15
   towerBehavior: {fileID: 7695893906165489616}
 --- !u!4 &7695893906589917538

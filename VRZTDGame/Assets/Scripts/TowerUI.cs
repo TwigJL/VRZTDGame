@@ -10,9 +10,9 @@ public class TowerUI : MonoBehaviour
     public Text rangeText; // UI text component for range
     public Text fireRateText; // UI text component for fire rate
     public Text damageText; // UI text component for damage
-    public List<float> rangeValues; // List of range values for each level
-    public List<float> fireRateValues; // List of fire rate values for each level
-    public List<float> damageValues;
+    public List<string> rangeValues; // List of range values for each level
+    public List<string> fireRateValues; // List of fire rate values for each level
+    public List<string> damageValues;
     private bool inRange = false;
     public TowerBehavior towerBehavior;
     void Start(){
