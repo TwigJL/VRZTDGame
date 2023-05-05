@@ -1150,7 +1150,7 @@ MonoBehaviour:
   upgradeButtonText: {fileID: 7016878768050658437}
   sellButtonText: {fileID: 7016878768889050528}
   towerBehavior: {fileID: 2863434188510120031}
-  heightAboveTerrain: 1
+  heightAboveTerrain: 0.5
 --- !u!54 &4083474504073548009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1178,7 +1178,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 14.667788, z: 10}
+  m_Size: {x: 25, y: 14.667788, z: 25}
   m_Center: {x: 0, y: 7.666106, z: -3.2254337e-15}
 --- !u!114 &1033956280
 MonoBehaviour:
@@ -1503,7 +1503,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7016878769113706864}
   m_LocalRotation: {x: 0.031017572, y: -0, z: -0, w: 0.9995189}
-  m_LocalPosition: {x: 0, y: 0, z: -9.690002}
+  m_LocalPosition: {x: 0, y: 0, z: -13.66}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1794,8 +1794,8 @@ GameObject:
   - component: {fileID: 7016878769207094086}
   - component: {fileID: 7016878769207094081}
   - component: {fileID: 7016878769207094080}
-  m_Layer: 11
-  m_Name: Photon Tower Space
+  m_Layer: 16
+  m_Name: Photon Tower UI Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1827,7 +1827,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 35, y: 14.667788, z: 35}
+  m_Size: {x: 25, y: 14.667788, z: 25}
   m_Center: {x: 0, y: 7.666106, z: -3.2254337e-15}
 --- !u!114 &7016878769207094080
 MonoBehaviour:

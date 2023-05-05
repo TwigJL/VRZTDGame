@@ -27,10 +27,10 @@ TagManager:
   - Chain
   - Tower
   - RailGun
-  - 
+  - Terrain
   - Photon
-  - 
-  - 
+  - Player
+  - TowerUI
   - 
   - 
   - 
