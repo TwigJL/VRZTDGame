@@ -44296,13 +44296,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49730f4665afeca42ad00e2711542c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
   waypoints: []
   slowDuration: 2
   freezeDuration: 1.2
   burnDuration: 5
   burnDamagePerSecond: 10
   maxHealth: 300
+  health: 0
+  zombieValue: 100
+  gameManager: {fileID: 0}
+  damage: 5
   zombieLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -44312,3 +44316,4 @@ MonoBehaviour:
   chainEffectParticles: {fileID: 2105056861}
   aoeEffectParticles: {fileID: 198000012674599579}
   bleedParticles: {fileID: 198000011009717357}
+  isDead: 0

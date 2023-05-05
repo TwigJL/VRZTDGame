@@ -43937,12 +43937,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   waypoints: []
-  chooseDelay: 1
   slowDuration: 2
   freezeDuration: 0.5
   burnDuration: 10
   burnDamagePerSecond: 10
   maxHealth: 3000
+  health: 0
+  zombieValue: 500
+  gameManager: {fileID: 0}
+  damage: 5
   zombieLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -43952,6 +43955,7 @@ MonoBehaviour:
   chainEffectParticles: {fileID: 8789220771882374938}
   aoeEffectParticles: {fileID: 2070511901837848192}
   bleedParticles: {fileID: 8520913048294686470}
+  isDead: 0
 --- !u!1001 &2162994925197651302
 PrefabInstance:
   m_ObjectHideFlags: 0

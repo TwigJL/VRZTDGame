@@ -13,7 +13,9 @@ public class TowerManager : MonoBehaviour
     public Text sellButtonText;
 
     public TowerBehavior towerBehavior;
-    void Start()
+    public float heightAboveTerrain = 1f;
+
+   void Start()
     {
         // Find the GameManager object with the appropriate tag
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -55,20 +57,27 @@ public class TowerManager : MonoBehaviour
         // Destroy the tower object
         Destroy(gameObject);
     }
-    void Update()
-    {   
+   void Update()
+   {
+      // Keep the tower object above the terrain
+      RaycastHit hit;
+      if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, LayerMask.GetMask("Terrain")))
+      {
+         transform.position = new Vector3(transform.position.x, hit.point.y + heightAboveTerrain, transform.position.z);
+      }
 
-        if (!upgradeMaxed)
-        {
-            upgradeButtonText.text = "Upgrade: " + upgradeCosts[towerBehavior.towerLevel - 1].ToString() + " Gold";
-        }
-        else
-        {
-            upgradeButtonText.text = "Upgrade: Maxed";
-        }
-        int sellPrice = sellPrices[towerBehavior.towerLevel - 1];
-        sellButtonText.text = "Sell: " + Mathf.RoundToInt((sellPrice + (float)originalCost )* 0.5f).ToString() + " Gold";
-    }
+      // Update the upgrade and sell button texts as before
+      if (!upgradeMaxed)
+      {
+         upgradeButtonText.text = "Upgrade: " + upgradeCosts[towerBehavior.towerLevel - 1].ToString() + " Gold";
+      }
+      else
+      {
+         upgradeButtonText.text = "Upgrade: Maxed";
+      }
+      int sellPrice = sellPrices[towerBehavior.towerLevel - 1];
+      sellButtonText.text = "Sell: " + Mathf.RoundToInt((sellPrice + (float)originalCost) * 0.5f).ToString() + " Gold";
+   }
 }
 
 

@@ -5,10 +5,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Inventory : MonoBehaviour
 {
    public XRRayInteractor rightRayInteractor;
+   private GameObject previewTower;
+   private bool isDragging;
    public List<GameObject> towerPrefabs = new List<GameObject>();
     public Text[] towerQuantityTexts = new Text[7];
 
     private int[] towerQuantities = new int[7];
+    public void Update(){
+      if (isDragging && previewTower != null)
+      {
+         Vector3 newPosition = GetRaycastIntersectionPosition();
+         previewTower.transform.position = newPosition;
+      }
+    }
     public void AddTower(int towerIndex)
     {
         towerQuantities[towerIndex]++;
@@ -18,6 +27,7 @@ public class Inventory : MonoBehaviour
     {
         SpawnTower(0);
     }
+    
 
     public void SpawnFlameThrowerTower()
     {
@@ -45,6 +55,7 @@ public class Inventory : MonoBehaviour
     {
         SpawnTower(6);
     }
+   
    private void SpawnTower(int towerIndex)
    {
       if (towerQuantities[towerIndex] > 0)
