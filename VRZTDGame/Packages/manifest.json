@@ -3,6 +3,7 @@
     "com.atteneder.gltfast": "https://github.com/atteneder/glTFast.git#v5.0.0",
     "com.google.external-dependency-manager": "file:C:/Users/Johnson/Downloads/com.google.external-dependency-manager-1.2.175.tgz",
     "com.google.firebase.app": "file:C:/Users/Johnson/Downloads/com.google.firebase.app-10.7.0.tgz",
+    "com.google.firebase.firestore": "file:C:/Users/Johnson/Downloads/com.google.firebase.firestore-10.7.0.tgz",
     "com.readyplayerme.avatarloader": "https://github.com/readyplayerme/rpm-unity-sdk-avatar-loader.git#v1.2.0",
     "com.readyplayerme.core": "https://github.com/readyplayerme/rpm-unity-sdk-core.git",
     "com.readyplayerme.webview": "https://github.com/readyplayerme/rpm-unity-sdk-webview.git#v1.1.1",

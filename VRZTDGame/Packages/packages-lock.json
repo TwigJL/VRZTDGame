@@ -26,6 +26,14 @@
         "com.google.external-dependency-manager": "1.2.175"
       }
     },
+    "com.google.firebase.firestore": {
+      "version": "file:C:/Users/Johnson/Downloads/com.google.firebase.firestore-10.7.0.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.google.firebase.app": "10.7.0"
+      }
+    },
     "com.readyplayerme.avatarloader": {
       "version": "https://github.com/readyplayerme/rpm-unity-sdk-avatar-loader.git#v1.2.0",
       "depth": 0,
