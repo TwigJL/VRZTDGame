@@ -12,7 +12,7 @@ TagManager:
   - Shop
   - Inventory
   - Right Ray Interactor
-  - Ground
+  - Terrain
   layers:
   - Default
   - TransparentFX

@@ -11,13 +11,6 @@ public class Inventory : MonoBehaviour
     public Text[] towerQuantityTexts = new Text[7];
 
     private int[] towerQuantities = new int[7];
-    public void Update(){
-      if (isDragging && previewTower != null)
-      {
-         Vector3 newPosition = GetRaycastIntersectionPosition();
-         previewTower.transform.position = newPosition;
-      }
-    }
     public void AddTower(int towerIndex)
     {
         towerQuantities[towerIndex]++;
@@ -65,33 +58,16 @@ public class Inventory : MonoBehaviour
 
          // Instantiate the tower prefab
          GameObject towerPrefab = towerPrefabs[towerIndex];
-         Vector3 spawnPosition = GetRaycastIntersectionPosition(); // Get the intersection point of the raycast
-         Quaternion spawnRotation = Quaternion.identity;
+         Vector3 spawnPosition = rightRayInteractor.transform.position; // Get the controller's position
+         Vector3 spawnOffset = rightRayInteractor.transform.forward * 3f; // Offset in the forward direction of the controller
+         spawnPosition += spawnOffset; // Add the offset to the spawn position
+         Quaternion spawnRotation = Quaternion.Euler(0, 0, 0); // Get the controller's rotation
          Instantiate(towerPrefab, spawnPosition, spawnRotation);
 
          // Update the tower quantity text
          UpdateTowerQuantityText(towerIndex);
       }
    }
-
-   private Vector3 GetRaycastIntersectionPosition()
-   {
-      RaycastHit hit;
-      Vector3 rayOrigin = rightRayInteractor.transform.position;
-      Vector3 rayDirection = rightRayInteractor.transform.forward;
-
-      if (Physics.Raycast(rayOrigin, rayDirection, out hit))
-      {
-         return hit.point;
-      }
-      else
-      {
-         return rightRayInteractor.transform.position;
-      }
-   }
-
-
-
 
    private void UpdateTowerQuantityText(int towerIndex)
     {

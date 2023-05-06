@@ -37,7 +37,7 @@ public class ZombieBehavior : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
         normalSpeed = speed;
-        health = maxHealth;
+        health = (int)(maxHealth * Mathf.Log(gameManager.waveCT + 1, 2));
         animator.SetFloat("Speed", speed);
         zombieLayer = LayerMask.GetMask("Zombie");
         DisableAllEffectParticles();
