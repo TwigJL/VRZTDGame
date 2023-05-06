@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour
     public int currency = 800;
     public int _activeZombiesCount;
     public Shop shop;
-    public int ActiveZombiesCount
+    public int health = 150;
+   public int ActiveZombiesCount
     {
         get => _activeZombiesCount;
         set

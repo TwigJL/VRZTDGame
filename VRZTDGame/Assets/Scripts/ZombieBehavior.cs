@@ -85,6 +85,10 @@ public class ZombieBehavior : MonoBehaviour
             ChooseNextWaypoint();
             
         }
+      if (other.gameObject.CompareTag("LastWaypoint"))
+      {
+         gameManager.health -= damage;
+      }
     }
 
     void ChooseNextWaypoint()
