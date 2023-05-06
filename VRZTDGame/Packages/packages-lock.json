@@ -12,6 +12,20 @@
       },
       "hash": "76f76584a113b240a4ec11f324b17302bde9a53a"
     },
+    "com.google.external-dependency-manager": {
+      "version": "file:C:/Users/Johnson/Downloads/com.google.external-dependency-manager-1.2.175.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {}
+    },
+    "com.google.firebase.app": {
+      "version": "file:C:/Users/Johnson/Downloads/com.google.firebase.app-10.7.0.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.175"
+      }
+    },
     "com.readyplayerme.avatarloader": {
       "version": "https://github.com/readyplayerme/rpm-unity-sdk-avatar-loader.git#v1.2.0",
       "depth": 0,
