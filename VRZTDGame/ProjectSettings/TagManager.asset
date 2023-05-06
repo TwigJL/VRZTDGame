@@ -13,6 +13,7 @@ TagManager:
   - Inventory
   - Right Ray Interactor
   - Terrain
+  - LastWaypoint
   layers:
   - Default
   - TransparentFX

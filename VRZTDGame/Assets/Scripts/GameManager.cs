@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public int _activeZombiesCount;
     public Shop shop;
     public int health = 150;
+    public bool isPaused = false;
    public int ActiveZombiesCount
     {
         get => _activeZombiesCount;

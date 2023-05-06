@@ -1,0 +1,352 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7917396132681060661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7917396132681060660}
+  - component: {fileID: 7917396132681060663}
+  - component: {fileID: 7917396132681060662}
+  - component: {fileID: 7917396132681060665}
+  - component: {fileID: 7917396132681060664}
+  - component: {fileID: 7917396132681060667}
+  - component: {fileID: 7917396132681060669}
+  - component: {fileID: 7917396132681060666}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7917396132681060660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396132681060661}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 513.88086, y: 73.36949, z: 730.9089}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7917396133537822353}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7917396132681060663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396132681060661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df373486e6f59904aa7186bc1368cd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieSpawner: {fileID: 7917396133537822352}
+  maxNormalWaveZombies: 10
+  maxEliteWaveZombies: 20
+  maxBossWaveZombies: 30
+  audioSource: {fileID: 7917396132681060667}
+  normalWaveClip: {fileID: 8300000, guid: 1ca8b91a4fa0cf44d8496b860f4705d3, type: 3}
+  eliteWaveClip: {fileID: 8300000, guid: 8224852fdf4ba6d409f7bfa85f3f5071, type: 3}
+  bossWaveClip: {fileID: 8300000, guid: 7ed0448164e44324a9adce6e0ef1f51f, type: 3}
+  waveCT: 0
+  spawnNewWave: 0
+  currency: 800
+  _activeZombiesCount: 0
+  shop: {fileID: 0}
+  health: 100
+  isPaused: 0
+--- !u!114 &7917396132681060662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396132681060661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62bed843328b107448ab3ff676e24570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warningMessagesToHide:
+  - The tree Bush_B must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting
+    will not work correctly.
+  - 'Assembly ''Assets/Firebase/Editor/Firebase.Editor.dll'' will not be loaded due
+    to errors: Unable to resolve reference ''UnityEditor.iOS.Extensions.Xcode''.
+    Is the assembly missing or incompatible with the current platform? Reference
+    validation can be disabled in the Plugin Inspector.'
+  - 'Assembly ''Assets/ExternalDependencyManager/Editor/1.2.175/Google.IOSResolver.dll''
+    will not be loaded due to errors: Unable to resolve reference ''UnityEditor.iOS.Extensions.Xcode''.
+    Is the assembly missing or incompatible with the current platform? Reference
+    validation can be disabled in the Plugin Inspector. '
+--- !u!114 &7917396132681060665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396132681060661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d179ab604adca4794d751c2bd96830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 0}
+  shopCanvas: {fileID: 0}
+  openShopAction:
+    m_Name: Open Shop
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c31d8d8c-4018-4719-81e4-7711597a81ae
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+--- !u!114 &7917396132681060664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396132681060661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d591e30ec6b63e0419103396ae62a0e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftController: {fileID: 0}
+  inventoryCanvas: {fileID: 0}
+  openInventoryAction:
+    m_Name: Open Inventory
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f431dc3f-630d-4f47-b40b-4d184c22185d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+--- !u!82 &7917396132681060667
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396132681060661}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7917396132681060669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396132681060661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d80895d31a1bc844a86800e66d31bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftController: {fileID: 0}
+  settingsCanvas: {fileID: 0}
+  openSettingsAction:
+    m_Name: Open Settings
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b0311faf-b64d-40b1-b33c-3afd907d4408
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+--- !u!114 &7917396132681060666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396132681060661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6f9488f38c209459684c88e40443be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 0}
+  gameInfoCanvas: {fileID: 0}
+  openGameInfoAction:
+    m_Name: Open Game Info
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b3569120-a17d-40a3-b9b2-a6b1e923fbad
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+--- !u!1 &7917396133537822350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7917396133537822353}
+  - component: {fileID: 7917396133537822352}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7917396133537822353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396133537822350}
+  m_LocalRotation: {x: 0.021305332, y: 0.95151174, z: -0.06746793, w: 0.29936537}
+  m_LocalPosition: {x: 47.49, y: -56.52, z: 250.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7917396132681060660}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7917396133537822352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396133537822350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381945f6c63e3a04bb9921130727d397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalWavePrefabs:
+  - {fileID: 5186059726591971335, guid: 0c994987099f99545b4d53371bf65332, type: 3}
+  - {fileID: 6333614631986071599, guid: 08a7c6b8c57e10b4b8bf6c6fa83e01ff, type: 3}
+  - {fileID: 6540286382236482633, guid: 3a892dd272631534ba5bc4c40a8ae656, type: 3}
+  eliteWavePrefabs:
+  - {fileID: 5186059726591971335, guid: 0c994987099f99545b4d53371bf65332, type: 3}
+  - {fileID: 6333614631986071599, guid: 08a7c6b8c57e10b4b8bf6c6fa83e01ff, type: 3}
+  - {fileID: 6540286382236482633, guid: 3a892dd272631534ba5bc4c40a8ae656, type: 3}
+  - {fileID: 2125074134484600007, guid: 5c54b6cf3b290ca48941f0514e5088c0, type: 3}
+  bossWavePrefabs:
+  - {fileID: 5186059726591971335, guid: 0c994987099f99545b4d53371bf65332, type: 3}
+  - {fileID: 6333614631986071599, guid: 08a7c6b8c57e10b4b8bf6c6fa83e01ff, type: 3}
+  - {fileID: 6540286382236482633, guid: 3a892dd272631534ba5bc4c40a8ae656, type: 3}
+  - {fileID: 2125074134484600007, guid: 5c54b6cf3b290ca48941f0514e5088c0, type: 3}
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnDelay: 1
+  bossZombiePrefab: {fileID: 6023693610037869252, guid: 8e83ad33d3246a1478b03a8188a10c9a,
+    type: 3}
+  maxNormalWaveZombies: 0
+  maxEliteWaveZombies: 0
+  maxBossWaveZombies: 0
+  normalWaveZombiesSpawned: 0
+  eliteWaveZombiesSpawned: 0
+  BossWaveZombiesSpawned: 0

@@ -44340,15 +44340,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   waypoints: []
-  slowDuration: 2
-  freezeDuration: 1
+  slowDuration: 0.5
+  freezeDuration: 0.2
   burnDuration: 5
   burnDamagePerSecond: 10
   maxHealth: 40000
   health: 0
   zombieValue: 1500
   gameManager: {fileID: 0}
-  damage: 5
+  damage: 30
   zombieLayer:
     serializedVersion: 2
     m_Bits: 8

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "524015294180",
+    "project_id": "vrztdjldevelops",
+    "storage_bucket": "vrztdjldevelops.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524015294180:android:022d2237d9bd497c62bef1",
+        "android_client_info": {
+          "package_name": "com.JLDevelops.VRZTDGame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524015294180-ujk9d100kbsu5533d7v6f6o6g089rhkg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvJw-fBX96r5KFGEsYuUgvV6IttPWHllQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524015294180-ujk9d100kbsu5533d7v6f6o6g089rhkg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
