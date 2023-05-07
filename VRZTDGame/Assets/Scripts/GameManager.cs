@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public ZombieSpawner zombieSpawner;
+    public GameObject scoreUI;
     public int maxNormalWaveZombies = 10;
     public int maxEliteWaveZombies = 20;
     public int maxBossWaveZombies = 30;
@@ -129,8 +130,15 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(StartNormalWaveWithDelay(10f));
 
             }
-
         }
+      if (health <= 0)
+      {
+         health = 0; // Ensure that health doesn't go below 0
+         if (!scoreUI.activeSelf)
+         {
+            scoreUI.SetActive(true);
+         }
+      }
     }
 
 
