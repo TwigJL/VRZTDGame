@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+   public void SetPauseState(bool paused)
+   {
+      isPaused = paused;
+   }
     public void AddCurrency(int amount)
     {
         currency += amount;

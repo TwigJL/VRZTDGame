@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7917396132681060667}
   - component: {fileID: 7917396132681060669}
   - component: {fileID: 7917396132681060666}
+  - component: {fileID: 1712785545}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -89,6 +90,14 @@ MonoBehaviour:
     will not be loaded due to errors: Unable to resolve reference ''UnityEditor.iOS.Extensions.Xcode''.
     Is the assembly missing or incompatible with the current platform? Reference
     validation can be disabled in the Plugin Inspector. '
+  - The referenced script on this Behaviour (Game Object '<null>') is missing! UnityEngine.XR.Management.XRGeneralSettings:AttemptInitializeXRSDKOnLoad
+    ()
+  - The referenced script (Unknown) on this Behaviour is missing! UnityEngine.XR.Management.XRGeneralSettings:AttemptInitializeXRSDKOnLoad
+    ()
+  - 'The referenced script on this Behaviour (Game Object ''<null>'') is missing!
+    UnityEngine.XR.Management.XRGeneralSettings:AttemptInitializeXRSDKOnLoad () '
+  - The referenced script (Unknown) on this Behaviour is missing! UnityEngine.XR.Management.XRGeneralSettings:AttemptInitializeXRSDKOnLoad
+    ()
 --- !u!114 &7917396132681060665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +286,18 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &1712785545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917396132681060661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42215ceed5464a489ae6a562af2f6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7917396133537822350
 GameObject:
   m_ObjectHideFlags: 0
