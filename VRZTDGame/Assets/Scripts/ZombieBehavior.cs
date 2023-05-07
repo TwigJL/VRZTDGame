@@ -31,7 +31,8 @@ public class ZombieBehavior : MonoBehaviour
     public ParticleSystem bleedParticles;
     private Vector3 nextTargetPosition;
     public bool isDead = false;
-
+   public float immuneStateDuration = 3.0f;
+   private float immuneStateEndTime;
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -115,82 +116,92 @@ public class ZombieBehavior : MonoBehaviour
         }
     }
 
-    public void ApplySlow()
-    {
-        if (!isSlowed)
-        {
-            if (slowCoroutine != null) StopCoroutine(slowCoroutine);
-            if (slowCoroutine == null)
-            {
-                slowEffectParticles.gameObject.SetActive(true);
-                slowEffectParticles.Play();
-                slowCoroutine = StartCoroutine(SlowEffect());
-            }
-            isSlowed = true;
-        }
-    }
+   public void ApplySlow()
+   {
+      if (!isSlowed && Time.time > immuneStateEndTime)
+      {
+         if (slowCoroutine != null) StopCoroutine(slowCoroutine);
+         if (slowCoroutine == null)
+         {
+            slowEffectParticles.gameObject.SetActive(true);
+            slowEffectParticles.Play();
+            slowCoroutine = StartCoroutine(SlowEffect());
+         }
+         isSlowed = true;
+      }
+   }
 
-    private IEnumerator SlowEffect()
-    {
-        animator.SetFloat("Speed", normalSpeed / 2f);
-        yield return new WaitForSeconds(slowDuration);
-        slowEffectParticles.Stop();
-        slowEffectParticles.gameObject.SetActive(false);
-        animator.SetFloat("Speed", normalSpeed);
-    }
+   private IEnumerator SlowEffect()
+   {
+      animator.SetFloat("Speed", normalSpeed / 2f);
+      yield return new WaitForSeconds(slowDuration);
+      slowEffectParticles.Stop();
+      slowEffectParticles.gameObject.SetActive(false);
+      animator.SetFloat("Speed", normalSpeed);
+      immuneStateEndTime = Time.time + immuneStateDuration;
+      isSlowed = false;
+   }
 
-    public void ApplyFreeze()
-    {
-        if (freezeCoroutine != null) StopCoroutine(freezeCoroutine);
-        freezeCoroutine = null;
-        if (freezeCoroutine == null)
-        {
+
+   public void ApplyFreeze()
+   {
+      if (Time.time > immuneStateEndTime)
+      {
+         if (freezeCoroutine != null) StopCoroutine(freezeCoroutine);
+         freezeCoroutine = null;
+         if (freezeCoroutine == null)
+         {
             freezeEffectParticles.gameObject.SetActive(true);
             freezeEffectParticles.Play();
             freezeCoroutine = StartCoroutine(FreezeEffect());
-        }
-    }
+         }
+      }
+   }
 
-    private IEnumerator FreezeEffect()
-    {
-        animator.SetFloat("Speed", 0f);
-        yield return new WaitForSeconds(freezeDuration);
-        freezeEffectParticles.Stop();
-        freezeEffectParticles.gameObject.SetActive(false);
-        animator.SetFloat("Speed", normalSpeed);
-        freezeCoroutine = null; // reset freezeCoroutine to null
-    }
+   private IEnumerator FreezeEffect()
+   {
+      animator.SetFloat("Speed", 0f);
+      yield return new WaitForSeconds(freezeDuration);
+      freezeEffectParticles.Stop();
+      freezeEffectParticles.gameObject.SetActive(false);
+      animator.SetFloat("Speed", normalSpeed);
+      immuneStateEndTime = Time.time + immuneStateDuration;
+      freezeCoroutine = null; // reset freezeCoroutine to null
+   }
 
-
-    public void ApplyBurn()
-    {
-        // If burnCoroutine is not null, stop the running coroutine
-        if (burnCoroutine != null)
-        {
+   public void ApplyBurn()
+   {
+      if (Time.time > immuneStateEndTime)
+      {
+         // If burnCoroutine is not null, stop the running coroutine
+         if (burnCoroutine != null)
+         {
             StopCoroutine(burnCoroutine);
-        }
+         }
 
-        // Activate and play the burn effect particle system
-        burnEffectParticles.gameObject.SetActive(true);
-        burnEffectParticles.Play();
+         // Activate and play the burn effect particle system
+         burnEffectParticles.gameObject.SetActive(true);
+         burnEffectParticles.Play();
 
-        // Start the BurnEffect coroutine
-        burnCoroutine = StartCoroutine(BurnEffect());
-    }
+         // Start the BurnEffect coroutine
+         burnCoroutine = StartCoroutine(BurnEffect());
+      }
+   }
 
-    private IEnumerator BurnEffect()
-    {
-        float burnTime = 0f;
+   private IEnumerator BurnEffect()
+   {
+      float burnTime = 0f;
 
-        while (burnTime < burnDuration)
-        {
-            yield return new WaitForSeconds(1f);
-            ApplyDamage(burnDamagePerSecond);
-            burnTime += 1f;
-        }
-        burnEffectParticles.Stop();
-        burnEffectParticles.gameObject.SetActive(false);
-    }
+      while (burnTime < burnDuration)
+      {
+         yield return new WaitForSeconds(1f);
+         ApplyDamage(burnDamagePerSecond);
+         burnTime += 1f;
+      }
+      burnEffectParticles.Stop();
+      burnEffectParticles.gameObject.SetActive(false);
+      immuneStateEndTime = Time.time + immuneStateDuration;
+   }
 
 
     public void ApplyChainEffect(int damage, float chainRadius, float chainDelay)
