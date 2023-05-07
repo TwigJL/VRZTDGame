@@ -44268,12 +44268,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  chooseDelay: 1
   slowDuration: 2
   freezeDuration: 3
   burnDuration: 5
   burnDamagePerSecond: 10
   maxHealth: 500
+  health: 0
+  zombieValue: 100
+  gameManager: {fileID: 0}
+  damage: 5
   zombieLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -44283,6 +44286,8 @@ MonoBehaviour:
   chainEffectParticles: {fileID: 198000009585245409}
   aoeEffectParticles: {fileID: 198000012671904603}
   bleedParticles: {fileID: 5568004320349625413}
+  isDead: 0
+  immuneStateDuration: 2
 --- !u!4 &6678368068479963797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eba28ac6a986f03448c81d9a03a393bf,

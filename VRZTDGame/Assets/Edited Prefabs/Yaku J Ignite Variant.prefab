@@ -44260,7 +44260,7 @@ MonoBehaviour:
   maxHealth: 300
   health: 0
   zombieValue: 100
-  shop: {fileID: 0}
+  gameManager: {fileID: 0}
   damage: 5
   zombieLayer:
     serializedVersion: 2
@@ -44272,6 +44272,7 @@ MonoBehaviour:
   aoeEffectParticles: {fileID: 198000011972342983}
   bleedParticles: {fileID: 198000012414888748}
   isDead: 0
+  immuneStateDuration: 2
 --- !u!4 &5526837535214996157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a28db1d9de89ca24cabd770cffa891cf,

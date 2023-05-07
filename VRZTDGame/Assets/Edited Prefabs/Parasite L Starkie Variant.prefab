@@ -44317,3 +44317,4 @@ MonoBehaviour:
   aoeEffectParticles: {fileID: 198000012674599579}
   bleedParticles: {fileID: 198000011009717357}
   isDead: 0
+  immuneStateDuration: 2

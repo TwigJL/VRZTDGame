@@ -43956,6 +43956,7 @@ MonoBehaviour:
   aoeEffectParticles: {fileID: 2070511901837848192}
   bleedParticles: {fileID: 8520913048294686470}
   isDead: 0
+  immuneStateDuration: 2.5
 --- !u!1001 &2162994925197651302
 PrefabInstance:
   m_ObjectHideFlags: 0
