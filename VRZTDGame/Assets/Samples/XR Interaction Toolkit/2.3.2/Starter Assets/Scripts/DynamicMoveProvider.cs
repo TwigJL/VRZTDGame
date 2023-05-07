@@ -10,7 +10,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
     /// </summary>
     public class DynamicMoveProvider : ActionBasedContinuousMoveProvider
     {
-        /// <summary>
+      
         /// Defines which transform the XR Origin's movement direction is relative to.
         /// </summary>
         /// <seealso cref="leftHandMovementDirection"/>
@@ -111,6 +111,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         }
 
         /// <inheritdoc />
+        /// 
         protected override Vector3 ComputeDesiredMove(Vector2 input)
         {
             // Don't need to do anything if the total input is zero.
