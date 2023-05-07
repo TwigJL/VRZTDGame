@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
 
       audioSource.PlayOneShot(normalWaveClip);
       StartCoroutine(StartFirstWaveWithDelay(10f));
+      scoreUI.SetActive(false);
    }
    private IEnumerator StartFirstWaveWithDelay(float delaySeconds)
    {
@@ -164,6 +165,7 @@ public class GameManager : MonoBehaviour
          if (!scoreUI.activeSelf)
          {
             scoreUI.SetActive(true);
+            isPaused = true;
          }
       }
     }

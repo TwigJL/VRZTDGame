@@ -14,22 +14,34 @@ public class ScoreUI : MonoBehaviour
    public GameManager gameManager;
    private FirebaseFirestore db;
 
-
    void Start()
    {
-      // Get the GameManager instance
       gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-      // Initialize Firebase
       FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
       {
          FirebaseApp app = FirebaseApp.DefaultInstance;
          db = FirebaseFirestore.DefaultInstance;
-         
+
          submitButton.onClick.AddListener(SubmitScore);
          int wavesSurvived = gameManager.waveCT - 1;
          wavesSurvivedText.text = $"Waves Survived: {wavesSurvived}";
       });
+   }
+
+   private void OnEnable()
+   {
+      SetGamePaused(true);
+   }
+
+   private void OnDisable()
+   {
+      SetGamePaused(false);
+   }
+
+   private void SetGamePaused(bool isPaused)
+   {
+      Time.timeScale = isPaused ? 0f : 1f;
    }
 
    public void SubmitScore()
@@ -38,7 +50,6 @@ public class ScoreUI : MonoBehaviour
 
       if (!string.IsNullOrEmpty(playerName))
       {
-         // Prepare the data to be sent to Firestore
          int wavesSurvived = gameManager.waveCT - 1;
          Dictionary<string, object> scoreData = new Dictionary<string, object>
             {
@@ -46,7 +57,6 @@ public class ScoreUI : MonoBehaviour
                 { "wavesSurvived", wavesSurvived },
             };
 
-         // Send data to Firestore under the "GlobalScores" collection
          db.Collection("GlobalScores").Document(playerName).SetAsync(scoreData).ContinueWithOnMainThread(task =>
          {
             if (task.IsFaulted)
@@ -58,6 +68,8 @@ public class ScoreUI : MonoBehaviour
                Debug.Log("Score submitted successfully!");
             }
          });
+
+         SetGamePaused(false);
       }
       else
       {

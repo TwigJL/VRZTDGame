@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class SettingsToggle : MonoBehaviour
 {
-   public ActionBasedController leftController;
    public Canvas settingsCanvas;
    public InputAction openSettingsAction;
 
@@ -19,9 +18,6 @@ public class SettingsToggle : MonoBehaviour
       openSettingsAction = new InputAction("Open Settings");
       openSettingsAction.AddBinding("<XRController>{LeftHand}/SecondaryButton");
       openSettingsAction.Enable();
-
-      // Set the activateAction property of the leftController to the openSettingsAction
-      leftController.activateAction = new InputActionProperty(openSettingsAction);
 
       // Subscribe to the "performed" and "canceled" events
       openSettingsAction.performed += OnOpenSettingsPerformed;

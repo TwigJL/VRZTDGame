@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class GameInfoToggle : MonoBehaviour
 {
-   public ActionBasedController rightController;
    public Canvas gameInfoCanvas;
    public InputAction openGameInfoAction;
 
@@ -19,9 +18,6 @@ public class GameInfoToggle : MonoBehaviour
       openGameInfoAction = new InputAction("Open Game Info");
       openGameInfoAction.AddBinding("<XRController>{RightHand}/SecondaryButton");
       openGameInfoAction.Enable();
-
-      // Set the activateAction property of the rightController to the openGameInfoAction
-      rightController.activateAction = new InputActionProperty(openGameInfoAction);
 
       // Subscribe to the "performed" and "canceled" events
       openGameInfoAction.performed += OnOpenGameInfoPerformed;

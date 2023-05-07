@@ -33,7 +33,9 @@ public class ZombieBehavior : MonoBehaviour
     public bool isDead = false;
    public float immuneStateDuration = 3.0f;
    private float immuneStateEndTime;
-    private void Start()
+   private bool isFrozen = false;
+
+   private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
@@ -145,27 +147,25 @@ public class ZombieBehavior : MonoBehaviour
 
    public void ApplyFreeze()
    {
-      if (Time.time > immuneStateEndTime)
+      if (!isFrozen && Time.time > immuneStateEndTime)
       {
          if (freezeCoroutine != null) StopCoroutine(freezeCoroutine);
-         freezeCoroutine = null;
-         if (freezeCoroutine == null)
-         {
-            freezeEffectParticles.gameObject.SetActive(true);
-            freezeEffectParticles.Play();
-            freezeCoroutine = StartCoroutine(FreezeEffect());
-         }
+         freezeCoroutine = StartCoroutine(FreezeEffect());
       }
    }
 
    private IEnumerator FreezeEffect()
    {
+      isFrozen = true;
       animator.SetFloat("Speed", 0f);
+      freezeEffectParticles.gameObject.SetActive(true);
+      freezeEffectParticles.Play();
       yield return new WaitForSeconds(freezeDuration);
       freezeEffectParticles.Stop();
       freezeEffectParticles.gameObject.SetActive(false);
       animator.SetFloat("Speed", normalSpeed);
       immuneStateEndTime = Time.time + immuneStateDuration;
+      isFrozen = false;
       freezeCoroutine = null; // reset freezeCoroutine to null
    }
 

@@ -1558,7 +1558,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2662785832248735688}
   m_LocalRotation: {x: -0, y: 0.33206922, z: -0, w: 0.943255}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.112}
   m_LocalScale: {x: 0.003, y: 0.003, z: 0.003}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1568,7 +1568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 38.789, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.171}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2662785832248735699
@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 0
   m_CheckFor2DOcclusion: 0
-  m_CheckFor3DOcclusion: 0
+  m_CheckFor3DOcclusion: 1
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1868,7 +1868,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2662785832471998537}
+      - m_Target: {fileID: 1442458069556107257}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -2312,7 +2312,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2662785832471998537}
+      - m_Target: {fileID: 1442458069556107257}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 1
@@ -2417,7 +2417,7 @@ GameObject:
   - component: {fileID: 2662785832867177594}
   - component: {fileID: 2662785832867177595}
   - component: {fileID: 2662785832867177596}
-  - component: {fileID: 2662785832471998537}
+  - component: {fileID: 1442458069556107257}
   m_Layer: 5
   m_Name: SettingsDisplay
   m_TagString: Untagged
@@ -2432,18 +2432,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2662785832867177598}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.23509814, z: -0, w: 0.97197163}
+  m_LocalPosition: {x: 0, y: 0, z: 0.082}
   m_LocalScale: {x: 0.003, y: 0.003, z: 0.003}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2662785832586316874}
   m_Father: {fileID: 6479792603073534730}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -27.195, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.1376}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2662785832867177593
@@ -2521,12 +2521,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 0
   m_CheckFor2DOcclusion: 0
-  m_CheckFor3DOcclusion: 0
+  m_CheckFor3DOcclusion: 1
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &2662785832471998537
+--- !u!114 &1442458069556107257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3056,7 +3056,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2662785832471998537}
+      - m_Target: {fileID: 1442458069556107257}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -4428,7 +4428,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3324642954503678483}
-  m_LocalRotation: {x: 0.13434327, y: -0.028043898, z: -0.06569508, w: 0.98835707}
+  m_LocalRotation: {x: 0.13572608, y: -0.020322911, z: -0.009121858, w: 0.990496}
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
@@ -4436,7 +4436,7 @@ RectTransform:
   - {fileID: 3324642955582650082}
   m_Father: {fileID: 6479792604809993195}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 15.181, y: -4.343, z: -8.185}
+  m_LocalEulerAnglesHint: {x: 15.575, y: -2.543, z: -1.403}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.043, y: 0.223}
@@ -9074,6 +9074,7 @@ GameObject:
   - component: {fileID: 1122506750323925120}
   - component: {fileID: 1122506750323925125}
   - component: {fileID: 2662785832479668423}
+  - component: {fileID: 2075566563}
   m_Layer: 15
   m_Name: XR Origin
   m_TagString: Player
@@ -9090,7 +9091,7 @@ Transform:
   m_GameObject: {fileID: 5637310022005318199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.67, y: 3.67, z: 3.67}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6479792604816041801}
@@ -9350,6 +9351,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+--- !u!114 &2075566563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5637310022005318199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35517ea1a33b29448153e666a138087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetYThreshold: -20
+  resetPoint: {fileID: 0}
 --- !u!1 &6067859789982616621
 GameObject:
   m_ObjectHideFlags: 0
@@ -16357,7 +16372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5688939592833256207
 Transform:
   m_ObjectHideFlags: 0
