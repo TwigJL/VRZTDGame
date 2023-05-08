@@ -14893,7 +14893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 3127728407960785099}
-  m_MoveSpeed: 20
+  m_MoveSpeed: 10
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
@@ -16345,12 +16345,12 @@ PrefabInstance:
     - target: {fileID: 6373252451277235342, guid: 5b5b58bd1ffcf364197357d1f833b374,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: -2.0000002
+      value: 7.434506e+9
       objectReference: {fileID: 0}
     - target: {fileID: 6373252451277235342, guid: 5b5b58bd1ffcf364197357d1f833b374,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 3e-45
+      value: 1.02e-43
       objectReference: {fileID: 0}
     - target: {fileID: 6373252451277235342, guid: 5b5b58bd1ffcf364197357d1f833b374,
         type: 3}
