@@ -44306,7 +44306,7 @@ MonoBehaviour:
   health: 0
   zombieValue: 100
   gameManager: {fileID: 0}
-  damage: 5
+  damage: 25
   zombieLayer:
     serializedVersion: 2
     m_Bits: 8

@@ -9,16 +9,9 @@ public class TypingArea : MonoBehaviour
    public XRBaseController rightController;
    public float activationDistance = 0.5f;
 
-   private XRPokeInteractor leftPokeInteractor;
-   private XRPokeInteractor rightPokeInteractor;
-   private XRGrabInteractable keyboardInteractable;
-
-   void Start()
-   {
-      leftPokeInteractor = leftController.GetComponent<XRPokeInteractor>();
-      rightPokeInteractor = rightController.GetComponent<XRPokeInteractor>();
-      keyboardInteractable = GetComponent<XRGrabInteractable>();
-   }
+   public XRPokeInteractor leftPokeInteractor;
+   public XRPokeInteractor rightPokeInteractor;
+   public XRGrabInteractable keyboardInteractable;
 
    void Update()
    {

@@ -378,7 +378,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2215886854656831398}
-  - component: {fileID: 2215886854656831399}
   - component: {fileID: 2215886854656831394}
   m_Layer: 1
   m_Name: Gauss Cannon Tower Container
@@ -404,24 +403,6 @@ Transform:
   m_Father: {fileID: 3001536070815593780}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2215886854656831399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2215886854656831397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalCost: 1800
-  upgradeCosts: d0070000a00f0000
-  sellPrices: 08070000d0070000a00f0000
-  upgradeButtonText: {fileID: 2215886855071280791}
-  sellButtonText: {fileID: 2215886855285242426}
-  towerBehavior: {fileID: 5116907322572953213}
 --- !u!65 &2215886854656831394
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -825,7 +806,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2215886854656831399}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
         m_MethodName: UpgradeTower
         m_Mode: 1
@@ -1201,7 +1182,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2215886854656831399}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
         m_MethodName: SellTower
         m_Mode: 1
@@ -1391,6 +1372,7 @@ GameObject:
   - component: {fileID: 1664503413}
   - component: {fileID: 1664503412}
   - component: {fileID: 873180696}
+  - component: {fileID: 254110699}
   m_Layer: 1
   m_Name: Gauss Cannon Tower VR Grabbable
   m_TagString: Untagged
@@ -1591,6 +1573,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetYThreshold: -20
+--- !u!114 &254110699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3001536070815593782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCost: 1800
+  upgradeCosts: d0070000a00f0000
+  sellPrices: 08070000d0070000a00f0000
+  upgradeButtonText: {fileID: 2215886855071280791}
+  sellButtonText: {fileID: 2215886855285242426}
+  towerBehavior: {fileID: 5116907322572953213}
 --- !u!1 &4389055619608350794
 GameObject:
   m_ObjectHideFlags: 0

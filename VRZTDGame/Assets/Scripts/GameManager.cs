@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
    public List<ZombieSpawner> zombieSpawners;
    public GameObject scoreUI;
-    public int maxNormalWaveZombies = 10;
+   public GameObject KeyboardToggle;
+   public int maxNormalWaveZombies = 10;
     public int maxEliteWaveZombies = 20;
     public int maxBossWaveZombies = 30;
     public AudioSource audioSource;
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
       audioSource.PlayOneShot(normalWaveClip);
       StartCoroutine(StartFirstWaveWithDelay(10f));
       scoreUI.SetActive(false);
+      KeyboardToggle.SetActive(false);
    }
    private IEnumerator StartFirstWaveWithDelay(float delaySeconds)
    {
@@ -165,6 +167,7 @@ public class GameManager : MonoBehaviour
          if (!scoreUI.activeSelf)
          {
             scoreUI.SetActive(true);
+            KeyboardToggle.SetActive(true);
             isPaused = true;
          }
       }

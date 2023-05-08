@@ -689,7 +689,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4582091643174141582}
-  - component: {fileID: 4582091643174141581}
   - component: {fileID: 6842702874787527162}
   m_Layer: 1
   m_Name: Photon Blaster Tower Container
@@ -715,24 +714,6 @@ Transform:
   m_Father: {fileID: 6842702874729601681}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4582091643174141581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4582091643174141583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalCost: 400
-  upgradeCosts: 20030000e8030000
-  sellPrices: 9001000020030000e8030000
-  upgradeButtonText: {fileID: 4582091643301269196}
-  sellButtonText: {fileID: 4582091643540039657}
-  towerBehavior: {fileID: 8740040176001817110}
 --- !u!65 &6842702874787527162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -744,8 +725,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25, y: 14.667788, z: 25}
-  m_Center: {x: 0, y: 7.666106, z: -3.2254337e-15}
+  m_Size: {x: 25, y: 15.102949, z: 25}
+  m_Center: {x: 0, y: 7.4485254, z: 0}
 --- !u!1 &4582091643301269202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1379,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4582091643174141581}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
         m_MethodName: UpgradeTower
         m_Mode: 1
@@ -1532,7 +1513,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4582091643174141581}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
         m_MethodName: SellTower
         m_Mode: 1
@@ -1640,6 +1621,7 @@ GameObject:
   - component: {fileID: 6842702874729601687}
   - component: {fileID: 6842702874729601684}
   - component: {fileID: 859024442}
+  - component: {fileID: 7041157335863576370}
   m_Layer: 1
   m_Name: Photon Blaster Tower VR Grabbable
   m_TagString: Untagged
@@ -1825,8 +1807,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 15.55, z: 5}
-  m_Center: {x: 0, y: 14.6, z: -3.2254337e-15}
+  m_Size: {x: 5, y: 15.919888, z: 5}
+  m_Center: {x: 0, y: 14.415056, z: 0}
 --- !u!114 &859024442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1840,6 +1822,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetYThreshold: -20
+--- !u!114 &7041157335863576370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842702874729601685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCost: 400
+  upgradeCosts: 20030000e8030000
+  sellPrices: 9001000020030000e8030000
+  upgradeButtonText: {fileID: 4582091643301269196}
+  sellButtonText: {fileID: 4582091643540039657}
+  towerBehavior: {fileID: 8740040176001817110}
 --- !u!1 &8470063541115706871
 GameObject:
   m_ObjectHideFlags: 0

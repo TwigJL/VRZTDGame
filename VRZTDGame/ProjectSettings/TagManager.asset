@@ -15,6 +15,7 @@ TagManager:
   - Terrain
   - LastWaypoint
   - ResetPoint
+  - Keyboard
   layers:
   - Default
   - TransparentFX

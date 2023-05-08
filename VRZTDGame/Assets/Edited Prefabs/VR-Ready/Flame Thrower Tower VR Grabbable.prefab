@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 1743781389881924595}
   - component: {fileID: 1743781389881924556}
   - component: {fileID: 444039950}
+  - component: {fileID: 7007348269561228996}
   m_Layer: 1
   m_Name: Flame Thrower Tower VR Grabbable
   m_TagString: Untagged
@@ -462,6 +463,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetYThreshold: -20
+--- !u!114 &7007348269561228996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743781389881924557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCost: 800
+  upgradeCosts: 9001000058020000
+  sellPrices: 200300009001000058020000
+  upgradeButtonText: {fileID: 4669421295385517815}
+  sellButtonText: {fileID: 4669421295463271990}
+  towerBehavior: {fileID: 7592413890152627403}
 --- !u!1 &3148721956994748531
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +761,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4669421294645137236}
-  - component: {fileID: 4669421294645137243}
   - component: {fileID: 4669421294645137242}
   m_Layer: 1
   m_Name: Flame Thrower Container
@@ -768,24 +786,6 @@ Transform:
   m_Father: {fileID: 1743781389881924593}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4669421294645137243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4669421294645137237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b32bac53ad14364fa0067c96cf009ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalCost: 800
-  upgradeCosts: 9001000058020000
-  sellPrices: 200300009001000058020000
-  upgradeButtonText: {fileID: 4669421295385517815}
-  sellButtonText: {fileID: 4669421295463271990}
-  towerBehavior: {fileID: 7592413890152627403}
 --- !u!65 &4669421294645137242
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4669421294645137243}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
         m_MethodName: UpgradeTower
         m_Mode: 1
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4669421294645137243}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
         m_MethodName: SellTower
         m_Mode: 1
