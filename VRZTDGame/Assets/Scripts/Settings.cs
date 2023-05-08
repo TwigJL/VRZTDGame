@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Settings : MonoBehaviour
 {
@@ -16,14 +17,6 @@ public class Settings : MonoBehaviour
 
    public void ExitGame()
    {
-      // Pause the game before quitting
-      PauseGame();
-
-      // Close the application
-#if UNITY_EDITOR
-      UnityEditor.EditorApplication.ExitPlaymode();
-#else
-            Application.Quit();
-#endif
+      SceneManager.LoadScene("Lobby");
    }
 }

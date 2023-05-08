@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7007348269561228996}
         m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
         m_MethodName: UpgradeTower
         m_Mode: 1
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7007348269561228996}
         m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
         m_MethodName: SellTower
         m_Mode: 1
