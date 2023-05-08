@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Lobby.unity
+    guid: 97aaf3770d63f294aa283badc60dc43f
   - enabled: 1
     path: Assets/Scenes/MountainMap.unity
     guid: bdf91b85d7a5701459557fec2f29beab
