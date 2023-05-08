@@ -9,34 +9,41 @@ public class LobbyManager : MonoBehaviour
    public GameObject howToPlayMenu;
    public GameObject mapMenu;
    public GameObject scoreboard;
-    void Start()
-    {
+   void Start()
+   {
       SetAllInactive();
       mainMenu.SetActive(true);
       scoreboard.SetActive(true);
    }
-    public void Tutorial(){
+   public void Tutorial()
+   {
       SetAllInactive();
       controlsMenu.SetActive(true);
       howToBuyMenu.SetActive(true);
       howToPlayMenu.SetActive(true);
    }
-    public void BacktoMainMenu(){
+   public void BacktoMainMenu()
+   {
       SetAllInactive();
       mainMenu.SetActive(true);
       scoreboard.SetActive(true);
    }
-    public void PlayMapsOpen(){
-    SetAllInactive();
+   public void PlayMapsOpen()
+   {
+      SetAllInactive();
       mapMenu.SetActive(true);
+      mainMenu.SetActive(false);
    }
-   public void Mountain(){
+   public void Mountain()
+   {
       SceneManager.LoadScene("MountainMap");
    }
-   public void Mall(){
+   public void Mall()
+   {
       SceneManager.LoadScene("MallMap");
    }
-    public void Quit(){
+   public void Quit()
+   {
       Application.Quit();
    }
 
