@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Firebase;
 using Firebase.Extensions;
 using Firebase.Firestore;
+using UnityEngine.SceneManagement;
 
 public class ScoreUI : MonoBehaviour
 {
@@ -48,32 +49,32 @@ public class ScoreUI : MonoBehaviour
    {
       string playerName = playerNameInputField.text;
 
-      if (!string.IsNullOrEmpty(playerName))
+      if (string.IsNullOrEmpty(playerName))
       {
-         int wavesSurvived = gameManager.waveCT - 1;
-         Dictionary<string, object> scoreData = new Dictionary<string, object>
-            {
-                { "playerName", playerName },
-                { "wavesSurvived", wavesSurvived },
-            };
+         playerName = "NoName";
+      }
 
-         db.Collection("GlobalScores").Document(playerName).SetAsync(scoreData).ContinueWithOnMainThread(task =>
+      int wavesSurvived = gameManager.waveCT - 1;
+      Dictionary<string, object> scoreData = new Dictionary<string, object>
+    {
+        { "playerName", playerName },
+        { "wavesSurvived", wavesSurvived },
+    };
+
+      db.Collection("GlobalScores").Document(playerName).SetAsync(scoreData).ContinueWithOnMainThread(task =>
+      {
+         if (task.IsFaulted)
          {
-            if (task.IsFaulted)
-            {
-               Debug.LogError("Error adding document: " + task.Exception);
-            }
-            else
-            {
-               Debug.Log("Score submitted successfully!");
-            }
-         });
+            Debug.LogError("Error adding document: " + task.Exception);
+         }
+         else
+         {
+            Debug.Log("Score submitted successfully!");
+            SceneManager.LoadScene("Lobby");
+         }
+      });
 
-         SetGamePaused(false);
-      }
-      else
-      {
-         Debug.LogError("Player name is empty!");
-      }
+      SetGamePaused(false);
    }
+
 }
