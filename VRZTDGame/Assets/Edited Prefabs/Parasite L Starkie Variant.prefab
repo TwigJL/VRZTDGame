@@ -44304,7 +44304,7 @@ MonoBehaviour:
   burnDamagePerSecond: 10
   maxHealth: 300
   health: 0
-  zombieValue: 100
+  zombieValue: 250
   gameManager: {fileID: 0}
   damage: 25
   zombieLayer:
