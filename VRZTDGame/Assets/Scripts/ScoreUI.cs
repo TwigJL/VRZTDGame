@@ -25,7 +25,7 @@ public class ScoreUI : MonoBehaviour
          db = FirebaseFirestore.DefaultInstance;
 
          submitButton.onClick.AddListener(SubmitScore);
-         int wavesSurvived = gameManager.waveCT;
+         int wavesSurvived = gameManager.waveCT - 1;
          wavesSurvivedText.text = $"Waves Survived: {wavesSurvived}";
       });
    }

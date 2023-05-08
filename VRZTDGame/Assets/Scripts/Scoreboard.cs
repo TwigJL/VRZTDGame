@@ -25,7 +25,7 @@ public class Scoreboard : MonoBehaviour
 
    private void FetchScores()
    {
-      db.Collection("GlobalScores").GetSnapshotAsync().ContinueWithOnMainThread(task =>
+      db.Collection("GlobalScores").OrderByDescending("wavesSurvived").GetSnapshotAsync().ContinueWithOnMainThread(task =>
       {
          if (task.IsFaulted)
          {
@@ -49,4 +49,5 @@ public class Scoreboard : MonoBehaviour
          }
       });
    }
+
 }
