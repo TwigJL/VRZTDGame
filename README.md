@@ -6,13 +6,13 @@ Capstone Project for Game Programming , 5/9/2023 - Completed
 Johnson Li - Project Lead / Developer / Level Designer
 
 
-Enmanuel Proano - Level Designer
+Enmanuel Proano - Level Designer - https://github.com/enmpro
 
 
 Sherell Henry - Level Designer - https://github.com/SherelltHenry
 
 
-Jason Chan - Project Administrator
+Jason Chan - Project Administrator - https://github.com/Chanjj6
 
 
 A VR Game and a first for the team made with using Unity and OpenXR, a lot of effort and time went into this project, every how-to videos tend to be outdated or instructions unclear or there were factors that were not considered, basically there were a lot of issues that had to be resolved and we had no experience going into this, as this game was initially for the oculus/meta quest platform which would fundementally change all the scripts but went into openXR due to a lot of technical issues, it was a really enjoyable experience programming and seeing the results as one functions was getting completed after another, the scripts are very volatile as they will most likely be deprecated and XR always keep having changes, but atleast conceptually it will stay. 
