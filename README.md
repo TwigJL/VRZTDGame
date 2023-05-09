@@ -19,7 +19,11 @@ A VR Game and a first for the team made with using Unity and OpenXR
 
 Clip of the development process
 
-https://github.com/TwigJL/VRZTDGame/assets/17182149/a37ed4ee-03ed-412b-9e91-37dd3d2a04a6
+
+
+https://github.com/TwigJL/VRZTDGame/assets/17182149/b7de9531-ce3a-4e40-91f8-669a36ed86bf
+
+
 
 
 
