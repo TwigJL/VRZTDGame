@@ -9,7 +9,7 @@ Johnson Li - Project Lead / Developer / Level Designer
 Enmanuel Proano - Level Designer
 
 
-Sherell Henry - Level Designer
+Sherell Henry - Level Designer - https://github.com/SherelltHenry
 
 
 Jason Chan - Project Administrator
