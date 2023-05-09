@@ -20,7 +20,7 @@ A VR Game and a first for the team made with using Unity and OpenXR, a lot of ef
 
 [Rundown Of the Game, Capstone Handout, Live Demo Version](https://docs.google.com/document/d/1t03DV_zWMd2e-flqAeL01BOIna2f8bGKoyUv74sLrRg/edit?usp=sharing)
 
-Clip of the development process
+Clip of the development process - Johnson
 
 
 
