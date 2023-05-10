@@ -23,7 +23,9 @@ A VR Game and a first for the team made with using Unity and OpenXR, a lot of ef
 
 
 Gameplay Footage
-<iframe width="560" height="315" src="https://www.youtube.com/embed/{SBj5sJcE2Cc}" frameborder="0" allowfullscreen></iframe>
+
+
+[![My video thumbnail](images/my-video-thumbnail.png)](https://youtu.be/SBj5sJcE2Cc)
 
 Clip of the development process - Johnson
 
