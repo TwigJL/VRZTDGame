@@ -18,7 +18,12 @@ Jason Chan - Project Administrator - https://github.com/Chanjj6
 A VR Game and a first for the team made with using Unity and OpenXR, a lot of effort and time went into this project, every how-to videos tend to be outdated or instructions unclear or there were factors that were not considered, basically there were a lot of issues that had to be resolved and we had no experience going into this, as this game was initially for the oculus/meta quest platform which would fundementally change all the scripts but went into openXR due to a lot of technical issues, it was a really enjoyable experience programming and seeing the results as one functions was getting completed after another, the scripts are very volatile as they will most likely be deprecated and XR always keep having changes, but atleast conceptually it will stay. 
 
 
-[Rundown Of the Game, Capstone Handout, Live Demo Version](https://docs.google.com/document/d/1t03DV_zWMd2e-flqAeL01BOIna2f8bGKoyUv74sLrRg/edit?usp=sharing)
+[Paperview Explanation of Game](https://docs.google.com/document/d/1t03DV_zWMd2e-flqAeL01BOIna2f8bGKoyUv74sLrRg/edit?usp=sharing)
+
+
+
+Gameplay Footage
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SBj5sJcE2Cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Clip of the development process - Johnson
 
