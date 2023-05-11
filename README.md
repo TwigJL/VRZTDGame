@@ -25,7 +25,8 @@ A VR Game and a first for the team made with using Unity and OpenXR, a lot of ef
 Gameplay Footage
 
 
-[![My video thumbnail](images/my-video-thumbnail.png)](https://youtu.be/SBj5sJcE2Cc)
+[![VRZTD](http://img.youtube.com/vi/SBj5sJcE2Cc/0.jpg)](http://www.youtube.com/watch?v=SBj5sJcE2Cc "First Look VRZTD Ground Zero")
+
 
 Clip of the development process - Johnson
 
